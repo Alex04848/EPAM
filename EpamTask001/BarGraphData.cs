@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace EpamTask001
 {
+    /// <summary>
+    /// Тип который описывает данные для построения гистрограммы,
+    /// посколько данные неизменны
+    /// для реализации типа была использована структура(значимый тип)
+    /// </summary>
     public struct BarGraphData
     {
         public DateTime GetTime => allTime;
@@ -14,8 +19,7 @@ namespace EpamTask001
 
         public string GetMethodName => nameOfMethod;
 
-        public string nameOfMethod;
-
+        string nameOfMethod;
 
         public BarGraphData(string methodName,DateTime time)
         {
@@ -23,8 +27,7 @@ namespace EpamTask001
             allTime = time;
         }
 
-
-        public override string ToString() => ($"{nameOfMethod};{allTime}");
+        public override string ToString() => ($"{nameOfMethod};{allTime.Ticks}");
     }
 
 }
