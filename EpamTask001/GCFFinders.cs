@@ -96,7 +96,7 @@ namespace EpamTask001
             DateTime timeStart = DateTime.Now;
             int result = algorithmFunction(a, b);
             DateTime timeEnd = DateTime.Now;
-            var difference = (timeEnd - timeStart);
+            var difference = (timeEnd.Subtract(timeStart));
             time = new DateTime() + difference;
 
             return result;
