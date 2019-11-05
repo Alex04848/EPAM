@@ -13,21 +13,21 @@ namespace EpamTask001
     /// </summary>
     public struct BarGraphData
     {
-        public DateTime GetTime => allTime;
+        public TimeSpan GetTime => allTime;
 
-        DateTime allTime;
+        TimeSpan allTime;
 
         public string GetMethodName => nameOfMethod;
 
         string nameOfMethod;
 
-        public BarGraphData(string methodName,DateTime time)
+        public BarGraphData(string methodName, TimeSpan time)
         {
             nameOfMethod = methodName; 
             allTime = time;
         }
 
-        public override string ToString() => ($"{nameOfMethod};{allTime.Ticks}");
+        public override string ToString() => ($"{nameOfMethod};{allTime.TotalMilliseconds} ms");
     }
 
 }

@@ -33,16 +33,16 @@ namespace EpamTask001
              Console.WriteLine("\t\tWithTheTime");
              Console.WriteLine("----------------------------------------");
 
-             DateTime time, timeSec;
+             TimeSpan time, timeSec;
 
-             int firstValue = 1000545989, secondValue = 45444989;
+             int firstValue = 781, secondValue = 231;
 
 
             Console.WriteLine($"NOD({firstValue};{secondValue}) = {AlgorithmWithTheTime(EvklidAlgorithm, firstValue, secondValue, out timeSec)}" +
-                  $" time: {timeSec.Ticks}");
+                  $" time: {timeSec.TotalMilliseconds} ms");
 
             Console.WriteLine($"NOD({firstValue};{secondValue}) = {AlgorithmWithTheTime(BinaryEvklidAlgorithm, firstValue, secondValue, out time)} " +
-                  $"time: {time.Ticks}");
+                  $"time: {time.TotalMilliseconds} ms");
 
 
             Console.WriteLine("----------------------------------------");

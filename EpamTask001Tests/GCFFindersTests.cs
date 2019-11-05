@@ -65,12 +65,6 @@ namespace EpamTask001.Tests
 
             //assert
             Assert.AreEqual(expected, result);
-        }
-
-        //[TestMethod()]
-        //public void DataForBarGraphTest() //Я уже даже не знаю что здесь тестировать
-        //{
-        //    Assert.Fail();
-        //}
+        }  
     }
 }

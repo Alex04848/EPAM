@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,13 +92,14 @@ namespace EpamTask001
         /// <param name="b"></param>
         /// <param name="time"></param>
         /// <returns></returns>
-        public static int AlgorithmWithTheTime(Func<int,int,int> algorithmFunction,int a,int b,out DateTime time)
+        public static int AlgorithmWithTheTime(Func<int,int,int> algorithmFunction,int a,int b,out TimeSpan time)
         {
-            DateTime timeStart = DateTime.Now;
+            Stopwatch timeStart = new Stopwatch();
+            timeStart.Start();
             int result = algorithmFunction(a, b);
-            DateTime timeEnd = DateTime.Now;
-            var difference = (timeEnd.Subtract(timeStart));
-            time = new DateTime() + difference;
+            timeStart.Stop();
+            time = timeStart.Elapsed;
+
 
             return result;
         }
@@ -111,7 +113,7 @@ namespace EpamTask001
         public static List<BarGraphData> DataForBarGraph(int a,int b)
         {
             List<BarGraphData> dataForResult = new List<BarGraphData>();
-            DateTime resultTime;
+            TimeSpan resultTime;
 
             algorithms.ForEach(algorithm =>
             {
@@ -119,7 +121,6 @@ namespace EpamTask001
                 dataForResult.Add(new BarGraphData(algorithm.Method.Name, resultTime));
             });
             
-
 
             return dataForResult;
         }
