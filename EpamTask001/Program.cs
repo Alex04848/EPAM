@@ -17,6 +17,7 @@ namespace EpamTask001
             (789,447)
         };
 
+
         static void Main(string[] args)
         {
              Console.WriteLine("----------------------------------------");
