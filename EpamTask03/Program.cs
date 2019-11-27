@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EpamTask03.ClassesOfShapes;
 using EpamTask03.AbstractClassesAndInterfaces;
+using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03
 {
@@ -12,32 +13,54 @@ namespace EpamTask03
     {
         static void Main(string[] args)
         {
-            PaperRectangle paperRectangle = new PaperRectangle(20, 20, ConsoleColor.Green);
 
-            FilmEquilateralTriangle triangle = new FilmEquilateralTriangle(5.5);
 
-            Display(triangle);
+            try
+            {
+                PaperTriangle triangle = new PaperTriangle(4, 5, 7, ConsoleColor.Red);
 
-            FilmRectangle filmRect = new FilmRectangle(triangle);
+                triangle.Display();
 
-            Console.WriteLine();
+                PaperCircle paperCircle = new PaperCircle();
 
-            Display(filmRect);
+                PaperRectangle paperRectangle = new PaperRectangle();
 
-            
+                PaperEquilateralTriangle paperEquilateralTriangle = new PaperEquilateralTriangle();
+
+
+            } 
+            catch (ShapeException shapeExcpt)
+            {
+                Console.WriteLine(shapeExcpt.Message);
+            }
+
+
+           
+
 
 
             Console.ReadKey();
         }
 
 
-        public static void Display(AbstractShape shape)
+      
+    }
+
+    public static class ShapeViewer
+    {
+        public static void Display(this AbstractShape shape)
         {
+            if (shape is IColor)
+                Console.ForegroundColor = (shape as IColor).Color;
+
             Console.WriteLine(shape);
 
-            Console.WriteLine($"Perimeter():{shape.GetPerimeter():F2}");
+            Console.WriteLine($"Perimeter = {shape.GetPerimeter():F2}");
 
-            Console.WriteLine($"Square():{shape.GetSquare():F2}");
+            Console.WriteLine($"Square = {shape.GetSquare():F2}");
+
+            Console.ResetColor();
         }
     }
+
 }

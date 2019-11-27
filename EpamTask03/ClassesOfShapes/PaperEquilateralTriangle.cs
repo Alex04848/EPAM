@@ -20,8 +20,18 @@ namespace EpamTask03.ClassesOfShapes
         {
         }
 
-        public PaperEquilateralTriangle() : this(default, ConsoleColor.White)
+        public PaperEquilateralTriangle()
         {
+            Color = ConsoleColor.White;
+        }
+
+        public PaperEquilateralTriangle(double side,AbstractShape shape) : this(side,shape,ConsoleColor.White)
+        {
+        }
+
+        public PaperEquilateralTriangle(double side,AbstractShape shape,ConsoleColor color) : base(side,shape)
+        {
+            Color = color;
         }
 
 

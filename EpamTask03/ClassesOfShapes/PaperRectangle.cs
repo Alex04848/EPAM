@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask03.AbstractClassesAndInterfaces;
+using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03
 {
@@ -20,15 +21,19 @@ namespace EpamTask03
         {
         }
 
-        public PaperRectangle() : this(default,default)
+        public PaperRectangle()
+        {
+            Color = ConsoleColor.White;
+        }
+
+        public PaperRectangle(double width, double height, AbstractShape shape) : this(width, height, shape,ConsoleColor.White)
         {
         }
 
-        public PaperRectangle(AbstractEquilateralTriangle triangle) : base(triangle)
+        public PaperRectangle(double width,double height,AbstractShape shape, ConsoleColor color) : base(width,height,shape)
         {
+            Color = color;
         }
-
-
 
         public override string ToString() => ($"{base.ToString()};{Color}");
     }

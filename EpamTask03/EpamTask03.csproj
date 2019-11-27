@@ -44,15 +44,22 @@
   <ItemGroup>
     <Compile Include="AbstractClassesAndInterfaces\AbstractCircle.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractEquilateralTriangle.cs" />
+    <Compile Include="AbstractClassesAndInterfaces\AbstractIsoscelesTriangle.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractShape.cs" />
+    <Compile Include="AbstractClassesAndInterfaces\AbstractTriangle.cs" />
     <Compile Include="ClassesOfShapes\FilmCircle.cs" />
     <Compile Include="ClassesOfShapes\FilmEquilateralTriangle.cs" />
+    <Compile Include="ClassesOfShapes\FilmIsoscelesTriangle.cs" />
     <Compile Include="ClassesOfShapes\FilmRectangle.cs" />
     <Compile Include="AbstractClassesAndInterfaces\IColor.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractRectangle.cs" />
+    <Compile Include="ClassesOfShapes\FilmTriangle.cs" />
     <Compile Include="ClassesOfShapes\PaperCircle.cs" />
     <Compile Include="ClassesOfShapes\PaperEquilateralTriangle.cs" />
+    <Compile Include="ClassesOfShapes\PaperIsoscelesTriangle.cs" />
     <Compile Include="ClassesOfShapes\PaperRectangle.cs" />
+    <Compile Include="ClassesOfShapes\PaperTriangle.cs" />
+    <Compile Include="ExceptionClasses\ShapeException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

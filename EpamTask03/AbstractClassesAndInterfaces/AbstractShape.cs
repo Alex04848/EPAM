@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03
 {
@@ -13,7 +14,9 @@ namespace EpamTask03
 
 
         public override bool Equals(object obj)
-              => ((obj is AbstractShape shape) && (this.GetSquare() > shape.GetSquare()));
+              => ((obj is AbstractShape shape) && (this.GetType() == obj.GetType()) 
+            && (this.GetSquare() == shape.GetSquare()) 
+            &&  ((this as IColor)?.Color == (obj as IColor)?.Color));
 
         public override int GetHashCode()
               => (GetSquare().GetHashCode());

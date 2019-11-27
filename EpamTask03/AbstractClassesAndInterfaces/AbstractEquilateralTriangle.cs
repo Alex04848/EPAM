@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.AbstractClassesAndInterfaces
 {
     public abstract class AbstractEquilateralTriangle : AbstractShape
     {
         public double Side {
+
             get => side;
+
             set
             {
-                if (value >= 0)
-                    side = value;
-                else
-                    throw new ArgumentException("Invalid argument");
+                ShapeException.CatchArgumentException(value);
+                side = value;
             }
         }
 
@@ -26,8 +27,15 @@ namespace EpamTask03.AbstractClassesAndInterfaces
             Side = side;
         }
 
-        public AbstractEquilateralTriangle() : this(default)
+        public AbstractEquilateralTriangle()
         {
+            side = default;
+        }
+
+        public AbstractEquilateralTriangle(double side,AbstractShape shape) : this(side)
+        {
+            ShapeException.CatchSquareException(this, shape);
+            ShapeException.CatchTypeException(this, shape);
         }
 
 
@@ -35,6 +43,6 @@ namespace EpamTask03.AbstractClassesAndInterfaces
 
         public override double GetSquare() => ((side/2)*(Math.Sqrt(Math.Pow(side,2) - Math.Pow((side/2),2))));
 
-        public override string ToString() => ($"{Side};{GetType().Name}");
+        public override string ToString() => ($"{Side};{this.GetType().Name}");
     }
 }

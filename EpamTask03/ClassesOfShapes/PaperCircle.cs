@@ -20,7 +20,17 @@ namespace EpamTask03.ClassesOfShapes
         {
         }
 
-        public PaperCircle() : base(default)
+        public PaperCircle()
+        {
+            Color = ConsoleColor.White;
+        }
+
+        public PaperCircle(double radius,AbstractShape shape,ConsoleColor color) : base(radius,shape)
+        {
+            Color = color;
+        }
+
+        public PaperCircle(double radius,AbstractShape shape) : this(radius, shape, ConsoleColor.White)
         {
         }
 

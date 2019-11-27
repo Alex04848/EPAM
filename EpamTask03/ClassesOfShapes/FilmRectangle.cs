@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask03.AbstractClassesAndInterfaces;
+using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03
 {
@@ -18,9 +19,8 @@ namespace EpamTask03
         {
         }
 
-        public FilmRectangle(AbstractEquilateralTriangle triangle) : base(triangle)
+        public FilmRectangle(double width,double height,AbstractShape shape) : base(width, height, shape)
         {
-        }
-
+        } 
     }
 }
