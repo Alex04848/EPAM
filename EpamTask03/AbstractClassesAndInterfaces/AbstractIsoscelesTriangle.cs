@@ -70,6 +70,6 @@ namespace EpamTask03.AbstractClassesAndInterfaces
 
 
         public override string ToString()
-            => ($"{sideA};{sideB};{this.GetType().Name}");
+            => ($"{this.GetType().Name};{sideA};{sideB}");
     }
 }

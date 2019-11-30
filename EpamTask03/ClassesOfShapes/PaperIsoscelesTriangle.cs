@@ -34,6 +34,16 @@ namespace EpamTask03.ClassesOfShapes
         {
         }
 
+        public PaperIsoscelesTriangle(double sideA, double sideB, string color) : this(sideA, sideB, ColorParser.Parse(color))
+        {
+        }
+
+        public PaperIsoscelesTriangle(double sideA,double sideB,AbstractShape shape, string color) : this(sideA, sideB, shape, ColorParser.Parse(color))
+        {
+        }
+
+
+
         public override string ToString() => ($"{base.ToString()};{Color}");
     }
 }

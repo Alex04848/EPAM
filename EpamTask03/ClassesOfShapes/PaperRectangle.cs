@@ -35,6 +35,17 @@ namespace EpamTask03
             Color = color;
         }
 
+        public PaperRectangle(double width, double height, string color) : this(width, height, ColorParser.Parse(color))
+        {
+        }
+
+        public PaperRectangle(double width,double height,AbstractShape shape, string color) : this(width, height,shape, ColorParser.Parse(color))
+        {
+        }
+
+
+
+
         public override string ToString() => ($"{base.ToString()};{Color}");
     }
 }

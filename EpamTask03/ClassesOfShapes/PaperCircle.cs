@@ -34,6 +34,18 @@ namespace EpamTask03.ClassesOfShapes
         {
         }
 
+        public PaperCircle(double radius,string color) : this(radius, ColorParser.Parse(color))
+        {
+        }
+
+        public PaperCircle(double radius,AbstractShape shape,string color) : this(radius,shape, ColorParser.Parse(color))
+        {
+
+        }
+
+
+
+
         public override string ToString() => ($"{base.ToString()};{Color}");
     }
 }

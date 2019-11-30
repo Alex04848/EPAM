@@ -59,6 +59,6 @@ namespace EpamTask03
         public override double GetSquare() => (Width * Height);
 
 
-        public override string ToString() => ($"{Width};{Height};{this.GetType().Name}");
+        public override string ToString() => ($"{this.GetType().Name};{Width};{Height}");
     }
 }

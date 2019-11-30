@@ -92,6 +92,6 @@ namespace EpamTask03.AbstractClassesAndInterfaces
             return (Math.Sqrt(halfOfPerimeter*(halfOfPerimeter - sideA)*(halfOfPerimeter - sideB)*(halfOfPerimeter - sideC)) );
         }
 
-        public override string ToString() => ($"{sideA};{sideB};{sideC};{this.GetType().Name}");
+        public override string ToString() => ($"{this.GetType().Name};{sideA};{sideB};{sideC}");
     }
 }

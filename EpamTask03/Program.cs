@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using EpamTask03.ClassesOfShapes;
 using EpamTask03.AbstractClassesAndInterfaces;
 using EpamTask03.ExceptionClasses;
+using EpamTask03.InputOutputClasses;
+using EpamTask03.HelpClasses;
 
 namespace EpamTask03
 {
@@ -13,54 +15,27 @@ namespace EpamTask03
     {
         static void Main(string[] args)
         {
+            List<AbstractShape> shapes = IOXml.OutputInList(@"C:\Users\xxxal\Desktop\BoxSec.xml");
+
+            Box box = new Box(shapes);
 
 
-            try
-            {
-                PaperTriangle triangle = new PaperTriangle(4, 5, 7, ConsoleColor.Red);
-
-                triangle.Display();
-
-                PaperCircle paperCircle = new PaperCircle();
-
-                PaperRectangle paperRectangle = new PaperRectangle();
-
-                PaperEquilateralTriangle paperEquilateralTriangle = new PaperEquilateralTriangle();
+            box.Shapes.ForEach(shape => shape.Display());
 
 
-            } 
-            catch (ShapeException shapeExcpt)
-            {
-                Console.WriteLine(shapeExcpt.Message);
-            }
+            var paperRect = new PaperRectangle(20, 10, "Green");
+
+            if (!box.ContainsShape(paperRect))
+                box.AddShape(paperRect);
 
 
-           
+            IOXml.InputInXmlFile(box, @"C:\Users\xxxal\Desktop\BoxFirst.xml");
+
+            IOStreams.InputInXmlFile(box, @"C:\Users\xxxal\Desktop\BoxSec.xml");
 
 
 
             Console.ReadKey();
         }
-
-
-      
     }
-
-    public static class ShapeViewer
-    {
-        public static void Display(this AbstractShape shape)
-        {
-            if (shape is IColor)
-                Console.ForegroundColor = (shape as IColor).Color;
-
-            Console.WriteLine(shape);
-
-            Console.WriteLine($"Perimeter = {shape.GetPerimeter():F2}");
-
-            Console.WriteLine($"Square = {shape.GetSquare():F2}");
-
-            Console.ResetColor();
-        }
-    }
-
 }

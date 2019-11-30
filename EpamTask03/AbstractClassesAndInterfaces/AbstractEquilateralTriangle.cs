@@ -43,6 +43,6 @@ namespace EpamTask03.AbstractClassesAndInterfaces
 
         public override double GetSquare() => ((side/2)*(Math.Sqrt(Math.Pow(side,2) - Math.Pow((side/2),2))));
 
-        public override string ToString() => ($"{Side};{this.GetType().Name}");
+        public override string ToString() => ($"{this.GetType().Name};{Side}");
     }
 }

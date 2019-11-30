@@ -7,7 +7,7 @@ using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03
 {
-    public abstract class AbstractShape : IDisposable
+    public abstract class AbstractShape
     {
         public abstract double GetPerimeter();
         public abstract double GetSquare();
@@ -20,10 +20,5 @@ namespace EpamTask03
 
         public override int GetHashCode()
               => (GetSquare().GetHashCode());
-
-        public void Dispose()
-        {
-            Dispose();
-        }
     }
 }

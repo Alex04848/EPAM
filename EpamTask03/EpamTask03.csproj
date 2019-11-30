@@ -47,6 +47,7 @@
     <Compile Include="AbstractClassesAndInterfaces\AbstractIsoscelesTriangle.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractShape.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractTriangle.cs" />
+    <Compile Include="Box.cs" />
     <Compile Include="ClassesOfShapes\FilmCircle.cs" />
     <Compile Include="ClassesOfShapes\FilmEquilateralTriangle.cs" />
     <Compile Include="ClassesOfShapes\FilmIsoscelesTriangle.cs" />
@@ -59,7 +60,13 @@
     <Compile Include="ClassesOfShapes\PaperIsoscelesTriangle.cs" />
     <Compile Include="ClassesOfShapes\PaperRectangle.cs" />
     <Compile Include="ClassesOfShapes\PaperTriangle.cs" />
+    <Compile Include="HelpClasses\ColorParser.cs" />
+    <Compile Include="ExceptionClasses\BoxException.cs" />
     <Compile Include="ExceptionClasses\ShapeException.cs" />
+    <Compile Include="HelpClasses\ShapeParser.cs" />
+    <Compile Include="HelpClasses\ShapeViewer.cs" />
+    <Compile Include="InputOutputClasses\IOStreams.cs" />
+    <Compile Include="InputOutputClasses\IOXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

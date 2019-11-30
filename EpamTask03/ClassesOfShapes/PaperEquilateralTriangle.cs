@@ -34,6 +34,15 @@ namespace EpamTask03.ClassesOfShapes
             Color = color;
         }
 
+        public PaperEquilateralTriangle(double side,string color) : this(side, ColorParser.Parse(color))
+        {
+        }
+
+        public PaperEquilateralTriangle(double side,AbstractShape shape,string color) : this(side, shape, ColorParser.Parse(color))
+        {
+        }
+
+
 
         public override string ToString() => ($"{base.ToString()};{Color}");
     }

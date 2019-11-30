@@ -44,6 +44,6 @@ namespace EpamTask03.AbstractClassesAndInterfaces
         public override double GetSquare() => (Math.PI*Math.Pow(Radius,2));
 
 
-        public override string ToString() => ($"{Radius};{this.GetType().Name}");
+        public override string ToString() => ($"{this.GetType().Name};{Radius}");
     }
 }
