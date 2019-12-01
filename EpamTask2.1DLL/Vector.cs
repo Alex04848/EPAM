@@ -30,7 +30,7 @@ namespace EpamTask02._1DLL
 
 
         /// <summary>
-        /// Операция сложения векторов
+        /// The sum operation
         /// </summary>
         /// <param name="vectorFirst"></param>
         /// <param name="vectorSecond"></param>
@@ -40,7 +40,7 @@ namespace EpamTask02._1DLL
 
 
         /// <summary>
-        /// Операция вычитания векторов
+        /// Subtraction of the vectors
         /// </summary>
         /// <param name="vectorFirst"></param>
         /// <param name="vectorSecond"></param>
@@ -49,7 +49,7 @@ namespace EpamTask02._1DLL
             => (new Vector((vectorFirst.XValue - vectorSecond.XValue), (vectorFirst.YValue - vectorSecond.YValue), (vectorFirst.ZValue - vectorSecond.ZValue)));
 
         /// <summary>
-        /// Операция умножения вектора на число
+        /// Multiplication of a vector on a number
         /// </summary>
         /// <param name="vector"></param>
         /// <param name="number"></param>
@@ -58,7 +58,7 @@ namespace EpamTask02._1DLL
             => (new Vector(vector.XValue*number,vector.YValue*number,vector.ZValue*number));
 
         /// <summary>
-        /// Операция деления вектора на число
+        /// Operation of division of a vector on a number
         /// </summary>
         /// <param name="vector"></param>
         /// <param name="number"></param>
@@ -67,7 +67,7 @@ namespace EpamTask02._1DLL
           => (new Vector(vector.XValue / number, vector.YValue / number, vector.ZValue / number));
 
         /// <summary>
-        /// Операция умножения векторов
+        /// Operation of multiplication of the vectors
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
@@ -76,7 +76,7 @@ namespace EpamTask02._1DLL
            => (new Vector((a.YValue*b.ZValue - a.ZValue*b.YValue),(a.ZValue*b.XValue - a.XValue*b.ZValue), (a.XValue*b.YValue - a.YValue*b.XValue)));
 
         /// <summary>
-        /// Перегрузка статической операции сравнения
+        /// Overload of a static operation of comparing
         /// </summary>
         /// <param name="vFirst"></param>
         /// <param name="vSec"></param>
@@ -85,7 +85,7 @@ namespace EpamTask02._1DLL
             => (vFirst.XValue == vSec.XValue && vFirst.YValue == vSec.YValue && vFirst.ZValue == vFirst.ZValue);
 
         /// <summary>
-        /// Перегрузка статической операции сравнения
+        /// Overload of a static operation of comparing
         /// </summary>
         /// <param name="vFirst"></param>
         /// <param name="vSec"></param>
@@ -94,7 +94,7 @@ namespace EpamTask02._1DLL
            => (vFirst.XValue != vSec.XValue && vFirst.YValue != vSec.YValue && vFirst.ZValue != vFirst.ZValue);
 
         /// <summary>
-        /// Переопределение виртуального метода Equals типа Object
+        /// Override of a virtual method Equals of type Object
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -107,14 +107,14 @@ namespace EpamTask02._1DLL
         }
 
         /// <summary>
-        ///  При переопределении метода Equals рекомендуется переопределять и метода GetHashCode()
+        ///  Overrided method GetHashCode()
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
             => ((XValue + YValue + ZValue).GetHashCode());
 
         /// <summary>
-        /// Переопределение виртуального метода ToString типа Object
+        /// Override of a virtual method ToString of type Object
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>

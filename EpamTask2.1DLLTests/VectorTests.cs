@@ -11,6 +11,9 @@ namespace EpamTask02._1DLL.Tests
     [TestClass()]
     public class VectorTests
     {
+        /// <summary>
+        /// Vector's mult test
+        /// </summary>
         [TestMethod()]
         public void VectorTestMult()
         {
@@ -27,6 +30,9 @@ namespace EpamTask02._1DLL.Tests
             Assert.AreEqual(expected,result);
         }
 
+        /// <summary>
+        /// Vector's sum test
+        /// </summary>
         [TestMethod()]
         public void VectorTestSum()
         {
@@ -43,6 +49,9 @@ namespace EpamTask02._1DLL.Tests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// Vector's sub test
+        /// </summary>
         [TestMethod()]
         public void VectorTestSub()
         {
@@ -59,6 +68,9 @@ namespace EpamTask02._1DLL.Tests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// vector's divison test
+        /// </summary>
         [TestMethod()]
         public void VectorTestDiv()
         {
@@ -75,6 +87,9 @@ namespace EpamTask02._1DLL.Tests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// Vector's multiplication
+        /// </summary>
         [TestMethod()]
         public void VectorTestMultBetweenVectors()
         {
