@@ -11,6 +11,10 @@ namespace EpamTask2._2DLL.Tests
     [TestClass()]
     public class PolynomialTests
     {
+
+        /// <summary>
+        /// A method that performs sum of a polynomial and a monomial
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestSumWithMonomial()
         {
@@ -39,6 +43,9 @@ namespace EpamTask2._2DLL.Tests
             Assert.AreEqual(expected, resultOfMult);
         }
 
+        /// <summary>
+        /// A method that performs subtraction of a polynomial and a monomial
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestSubWithMonomial()
         {
@@ -66,6 +73,10 @@ namespace EpamTask2._2DLL.Tests
             Assert.AreEqual(expected, resultOfMult);
         }
 
+
+        /// <summary>
+        /// A method that performs sum of the polynomials
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestSum()
         {
@@ -98,6 +109,9 @@ namespace EpamTask2._2DLL.Tests
             Assert.AreEqual(expected, resultOfMult);
         }
 
+        /// <summary>
+        /// A method that performs subtraction of the polynomials
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestSub()
         {
@@ -130,6 +144,10 @@ namespace EpamTask2._2DLL.Tests
             Assert.AreEqual(expected, resultOfMult);
         }
 
+
+        /// <summary>
+        /// A method that performs multiplication of a polynomial and a monomial
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestMulOnMonomial()
         {
@@ -159,6 +177,9 @@ namespace EpamTask2._2DLL.Tests
             Assert.AreEqual(expected, resultOfMult);
         }
 
+        /// <summary>
+        /// A method that performs sum of a polynomial and a number
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestMulOnNumber()
         {
@@ -187,6 +208,9 @@ namespace EpamTask2._2DLL.Tests
             Assert.AreEqual(expected, resultOfMult);
         }
 
+        /// <summary>
+        /// A method that performs division of a polynomial and a number
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestDivOnNumber()
         {
@@ -215,6 +239,9 @@ namespace EpamTask2._2DLL.Tests
             Assert.AreEqual(expected, resultOfMult);
         }
 
+        /// <summary>
+        /// A method that performs multiplication of the polynomials
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestMulOnPolinomial()
         {
@@ -250,6 +277,9 @@ namespace EpamTask2._2DLL.Tests
         }
 
 
+        /// <summary>
+        /// A method that performs comparision of the polynomials
+        /// </summary>
         [TestMethod()]
         public void PolynomialTestEquals()
         {

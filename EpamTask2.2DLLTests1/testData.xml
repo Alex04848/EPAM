@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Data>
+  <MonomialTestMultOnNum coeff="2" degree="5" num="2" resCoeff="4" />
+  <MonomialTestMultOnNum coeff="7" degree="4" num="5" resCoeff="35" />
+  <MonomialTestMultOnNum coeff="9" degree="1" num="1" resCoeff="9" />
+  <MonomialTestMultOnNum coeff="15" degree="2" num="7" resCoeff="105" />
+
+  <MonomialTestDivOnNum coeff="2" degree="5" num="2" resCoeff="1"/>
+  <MonomialTestDivOnNum coeff="7" degree="4" num="5" resCoeff="1,4" />
+  <MonomialTestDivOnNum coeff="9" degree="1" num="1" resCoeff="9" />
+  <MonomialTestDivOnNum coeff="15" degree="2" num="5" resCoeff="3" />
+
+  <MonomialTestMultOnMonomial coeffFirst="2" degreeFirst="5" coeffSec="2" degreeSec="2" resCoeff="4" resDegree="7" />
+  <MonomialTestMultOnMonomial coeffFirst="2" degreeFirst="5" coeffSec="1" degreeSec="2" resCoeff="2" resDegree="7" />
+  <MonomialTestMultOnMonomial coeffFirst="0,5" degreeFirst="5" coeffSec="2" degreeSec="2" resCoeff="1" resDegree="7" />
+
+  <MonomialTestEquals coeffFirst="2" degreeFirst="5" coeffSec="2" degreeSec="2" resBool="false"/>
+  <MonomialTestEquals coeffFirst="2" degreeFirst="2" coeffSec="2" degreeSec="2" resBool="true" />
+  <MonomialTestEquals coeffFirst="2" degreeFirst="5" coeffSec="2" degreeSec="2" resBool="false" />
+
+  <MonomialTestDivOnMonomial coeffFirst="2" degreeFirst="5" coeffSec="2" degreeSec="2" resCoeff="1" resDegree="3" />
+  <MonomialTestDivOnMonomial coeffFirst="2" degreeFirst="5" coeffSec="2" degreeSec="1" resCoeff="1" resDegree="4" />
+  <MonomialTestDivOnMonomial coeffFirst="2" degreeFirst="5" coeffSec="5" degreeSec="2" resCoeff="0,4" resDegree="3" />
+  
+  
+</Data>
