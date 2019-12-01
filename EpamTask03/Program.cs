@@ -15,23 +15,20 @@ namespace EpamTask03
     {
         static void Main(string[] args)
         {
-            List<AbstractShape> shapes = IOXml.OutputInList(@"C:\Users\xxxal\Desktop\BoxSec.xml");
+            Box box = new Box(new List<AbstractShape>() {
+                new FilmRectangle(20,10),
+                new PaperCircle(5,"Green"),
+                new PaperTriangle(5,7,9,"Yellow"),
+                new FilmCircle(7),
+                new FilmEquilateralTriangle(9.5),
+                new PaperIsoscelesTriangle(5.5,4,"Cyan")
+            });
 
-            Box box = new Box(shapes);
+            Console.WriteLine($"ViewByIndex: {box[0]}");
 
+            Console.WriteLine($"GetByIndex: {box.GetByIndex(2)}");
 
-            box.Shapes.ForEach(shape => shape.Display());
-
-
-            var paperRect = new PaperRectangle(20, 10, "Green");
-
-            if (!box.ContainsShape(paperRect))
-                box.AddShape(paperRect);
-
-
-            IOXml.InputInXmlFile(box, @"C:\Users\xxxal\Desktop\BoxFirst.xml");
-
-            IOStreams.InputInXmlFile(box, @"C:\Users\xxxal\Desktop\BoxSec.xml");
+            Console.WriteLine($"CountOfShapes: {box.CurrentCount}");
 
 
 

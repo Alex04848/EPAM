@@ -69,7 +69,6 @@ namespace EpamTask03.InputOutputClasses
 
         }
 
-
         public static List<AbstractShape> OutputInList(string path)
         {
             List<AbstractShape> shapes = new List<AbstractShape>();

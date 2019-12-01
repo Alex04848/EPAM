@@ -4,12 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask03.AbstractClassesAndInterfaces;
+using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.ClassesOfShapes
 {
     public class PaperEquilateralTriangle : AbstractEquilateralTriangle, IColor
     {
-        public ConsoleColor Color { get; }
+        public ConsoleColor Color
+        {
+
+            get => backFieldColor;
+
+            set
+            {
+                if (isSetted)
+                    throw new ColorException("The shape already painted");
+
+                backFieldColor = value;
+                isSetted = true;
+            }
+        }
+
+        ConsoleColor backFieldColor;
+
+        bool isSetted = false;
 
         public PaperEquilateralTriangle(double side,ConsoleColor color) : base(side)
         {

@@ -9,7 +9,7 @@ using EpamTask03.AbstractClassesAndInterfaces;
 using EpamTask03.ClassesOfShapes;
 using EpamTask03.ExceptionClasses;
 using EpamTask03.HelpClasses;
-
+using System.Text.RegularExpressions;
 
 namespace EpamTask03.InputOutputClasses
 {
@@ -42,6 +42,32 @@ namespace EpamTask03.InputOutputClasses
             }
 
 
+        }
+
+        public static List<AbstractShape> OutputInList(string path)
+        {
+            List<AbstractShape> shapes = new List<AbstractShape>();
+            Regex regex = new Regex($"(\\w+;)+\\w+");
+
+            if (!path.EndsWith(".xml"))
+                throw new IOException("Incorrect file!!!");
+
+
+            using(StreamReader stream = new StreamReader(path))
+            {
+
+                while (!stream.EndOfStream)
+                {
+                    string currentValue = stream.ReadLine();
+                    if (regex.IsMatch(currentValue) && currentValue.Contains("Values"))
+                        shapes.Add(ShapeParser.Parse(regex.Match(currentValue).Value));
+
+                }
+
+            }
+
+
+            return shapes;
         }
 
 

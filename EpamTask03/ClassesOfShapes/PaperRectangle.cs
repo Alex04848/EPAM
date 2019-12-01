@@ -10,7 +10,25 @@ namespace EpamTask03
 {
     class PaperRectangle : AbstractRectangle, IColor
     {
-        public ConsoleColor Color { get; }
+        public ConsoleColor Color
+        {
+
+            get => backFieldColor;
+
+            set
+            {
+                if (isSetted)
+                    throw new ColorException("The shape already painted");
+
+                backFieldColor = value;
+                isSetted = true;
+            }
+        }
+
+
+        ConsoleColor backFieldColor;
+
+        bool isSetted = false;
 
         public PaperRectangle(double width,double height,ConsoleColor color) : base(width,height)
         {

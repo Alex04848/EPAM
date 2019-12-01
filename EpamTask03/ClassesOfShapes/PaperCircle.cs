@@ -4,14 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask03.AbstractClassesAndInterfaces;
+using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.ClassesOfShapes
 {
     public class PaperCircle : AbstractCircle, IColor
     {
-        public ConsoleColor Color { get; }
+        public ConsoleColor Color {
 
-        public PaperCircle(double radius,ConsoleColor color) : base(radius)
+            get => backFieldColor;
+
+            set
+            {
+                if (isSetted)
+                    throw new ColorException("The shape already painted");
+
+                backFieldColor = value;
+                isSetted = true;
+            }
+        }
+
+        ConsoleColor backFieldColor;
+
+        bool isSetted = false;
+
+        public PaperCircle(double radius, ConsoleColor color) : base(radius)
+        {
+            Color = color;
+        }
+
+        public PaperCircle(double radius, AbstractShape shape, ConsoleColor color) : base(radius, shape)
         {
             Color = color;
         }
@@ -23,11 +45,6 @@ namespace EpamTask03.ClassesOfShapes
         public PaperCircle()
         {
             Color = ConsoleColor.White;
-        }
-
-        public PaperCircle(double radius,AbstractShape shape,ConsoleColor color) : base(radius,shape)
-        {
-            Color = color;
         }
 
         public PaperCircle(double radius,AbstractShape shape) : this(radius, shape, ConsoleColor.White)

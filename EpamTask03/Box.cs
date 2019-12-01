@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EpamTask03.AbstractClassesAndInterfaces;
 using EpamTask03.ExceptionClasses;
+using EpamTask03.InputOutputClasses;
 
 namespace EpamTask03
 {
@@ -22,13 +23,12 @@ namespace EpamTask03
      достать все Круги +
      достать все Пленочные фигуры +
      сохранить все фигуры / только бумажные / только плёночные из коробки в XML-файл,
-    используя StreamWriter 
+    используя StreamWriter + 
      сохранить все фигуры / только бумажные / только плёночные из коробки в XML-файл,
-    используя XmlWriter
-     загрузить все фигуры в коробку из XML-файла, используя StreamReader
-     загрузить все фигуры в коробку из XML-файла, используя XmlReader      
+    используя XmlWriter +
+     загрузить все фигуры в коробку из XML-файла, используя StreamReader +
+     загрузить все фигуры в коробку из XML-файла, используя XmlReader + 
  */
-
 
     public class Box
     {
@@ -43,7 +43,7 @@ namespace EpamTask03
         {
         }
 
-        public void AddShape(AbstractShape shape)
+        public void Add(AbstractShape shape)
         {
             if (Shapes.Any(t => t.GetType() == shape.GetType()))
                 throw new BoxException("The shape of this type already in the box!!!");
@@ -94,10 +94,49 @@ namespace EpamTask03
             .Where(shape => shape is AbstractCircle)
             .Select(shape => shape as AbstractCircle).ToList());
 
-
         public List<AbstractShape> AllPaperShapes() => (Shapes.Where(shape => shape is IColor).ToList());
 
         public List<AbstractShape> AllFilmShapes() => (Shapes.Except(AllPaperShapes()).ToList());
+
+        public void AllShapesToXmlFile(string path)
+        {
+            IOXml.InputInXmlFile(this, path);
+        }
+
+        public void AllShapesToXmlFileByStream(string path)
+        {
+            IOStreams.InputInXmlFile(this, path);
+        }
+
+        public void PaperShapesToXmlFile(string path)
+        {
+            IOXml.InputInXmlFile((new Box(AllPaperShapes())), path);
+        }
+
+        public void FilmShapesToXmlFile(string path)
+        {
+            IOXml.InputInXmlFile((new Box(AllFilmShapes())), path);
+        }
+
+        public void PaperShapesToXmlFileByStream(string path)
+        {
+            IOStreams.InputInXmlFile((new Box(AllPaperShapes())), path);
+        }
+
+        public void FilmShapesToXmlFileByStream(string path)
+        {
+            IOStreams.InputInXmlFile((new Box(AllFilmShapes())), path);
+        }
+
+        public void LoadShapesFromXml(string path)
+        {
+            Shapes = IOXml.OutputInList(path);
+        }
+
+        public void LoadShapesFromXmlByStream(string path)
+        {
+            Shapes = IOStreams.OutputInList(path);
+        }
 
     }
 }
