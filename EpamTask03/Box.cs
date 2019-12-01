@@ -43,7 +43,7 @@ namespace EpamTask03
         {
         }
 
-        public void Add(AbstractShape shape)
+        public void AddShape(AbstractShape shape)
         {
             if (Shapes.Any(t => t.GetType() == shape.GetType()))
                 throw new BoxException("The shape of this type already in the box!!!");

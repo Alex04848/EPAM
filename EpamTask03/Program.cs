@@ -23,13 +23,20 @@ namespace EpamTask03
                 new FilmEquilateralTriangle(9.5),
                 new PaperIsoscelesTriangle(5.5,4,"Cyan")
             });
+  
+            box.Shapes.ForEach(shape => {
 
+                Console.WriteLine();
+                shape.Display();
+                Console.WriteLine();
+
+            });
+         
             Console.WriteLine($"ViewByIndex: {box[0]}");
 
             Console.WriteLine($"GetByIndex: {box.GetByIndex(2)}");
 
             Console.WriteLine($"CountOfShapes: {box.CurrentCount}");
-
 
 
             Console.ReadKey();

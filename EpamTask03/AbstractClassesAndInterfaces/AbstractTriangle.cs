@@ -87,7 +87,7 @@ namespace EpamTask03.AbstractClassesAndInterfaces
 
         public override double GetSquare()
         {
-            double halfOfPerimeter = this.GetPerimeter();
+            double halfOfPerimeter = (this.GetPerimeter() / 2.0);
 
             return (Math.Sqrt(halfOfPerimeter*(halfOfPerimeter - sideA)*(halfOfPerimeter - sideB)*(halfOfPerimeter - sideC)) );
         }

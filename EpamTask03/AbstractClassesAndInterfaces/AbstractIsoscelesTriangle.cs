@@ -17,10 +17,10 @@ namespace EpamTask03.AbstractClassesAndInterfaces
             {
                 ShapeException.CatchArgumentException(value);
 
-                if (value == sideA)
+                if (value == sideB)
                     throw new ShapeException("Invalid argument!!!");
 
-                sideB = value;
+                sideA = value;
 
             }
         }
@@ -67,7 +67,6 @@ namespace EpamTask03.AbstractClassesAndInterfaces
 
         public override double GetSquare()
             => ((0.5)*sideB*Math.Sqrt(Math.Pow(sideA,2) - Math.Pow((sideB/2),2)));
-
 
         public override string ToString()
             => ($"{this.GetType().Name};{sideA};{sideB}");
