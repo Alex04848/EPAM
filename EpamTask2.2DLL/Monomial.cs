@@ -8,16 +8,17 @@ namespace EpamTask2._2DLL
 {
 
     /// <summary>
-    /// Класс который описывает тип одночлена
+    ///The type describe monimial
     /// </summary>
     public class Monomial : ICloneable
     {
         /// <summary>
-        /// Коэффициент на который умножается переменная
+        /// Coefficient for multiplication on a current variable
         /// </summary>
         public double Coefficient { get; set; }
+
         /// <summary>
-        /// Степень переменной
+        /// Degree of a variable
         /// </summary>
         public double Degree { get; set; }
 
@@ -32,7 +33,7 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Умножение одночлена на число
+        /// Multiplication on a number
         /// </summary>
         /// <param name="monomial"></param>
         /// <param name="number"></param>
@@ -41,7 +42,7 @@ namespace EpamTask2._2DLL
             => (new Monomial(monomial.Coefficient*number,monomial.Degree));
 
         /// <summary>
-        /// Умножение одночлена на другой одночлен
+        /// Multiplication on a monomial
         /// </summary>
         /// <param name="monomial"></param>
         /// <param name="number"></param>
@@ -50,7 +51,7 @@ namespace EpamTask2._2DLL
            => (new Monomial( (mFirst.Coefficient * mSecond.Coefficient) , (mFirst.Degree + mSecond.Degree) ));
 
         /// <summary>
-        /// Деление одночлена на число
+        /// Division of a monomial on a number
         /// </summary>
         /// <param name="monomial"></param>
         /// <param name="number"></param>
@@ -59,7 +60,7 @@ namespace EpamTask2._2DLL
           => (new Monomial(monomial.Coefficient / number, monomial.Degree));
 
         /// <summary>
-        /// Деление одночлена на другой одночлен
+        /// Division of a monomial on an other monomial
         /// </summary>
         /// <param name="mFirst"></param>
         /// <param name="mSec"></param>
@@ -68,7 +69,7 @@ namespace EpamTask2._2DLL
             => (new Monomial( (mFirst.Coefficient / mSec.Coefficient),(mFirst.Degree - mSec.Degree)));
 
         /// <summary>
-        /// Переопределение метода Equals() типа object
+        /// Override of a method Equals of type object
         /// </summary>
         /// <returns></returns>
         public override bool Equals(object obj)
@@ -80,23 +81,21 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Обычно рекомендуется переопределять GetHashCode при переопределении Equals()
-        /// В данном случае берётся метод от св-ва Degree
+        /// Usually recommended override GetHashCode if Equals already overrided
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
             => (Degree.GetHashCode());
 
         /// <summary>
-        /// Данный метод выполняет клонирование объект с помощью метода MemberwiseClone типа object
-        /// данный метод выполняет неглубокое копирование, но в данном случае он подходит
+        /// A method that performs a copy of an object
         /// </summary>
         /// <returns></returns>
         public object Clone() 
             => this.MemberwiseClone();
         
         /// <summary>
-        /// Переопределение метода ToString() типа object
+        /// Override of a method ToString() of type object
         /// </summary>
         /// <returns></returns>
         public override string ToString() => ($"({Coefficient})*x^({Degree})");

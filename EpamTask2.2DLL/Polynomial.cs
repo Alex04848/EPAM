@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace EpamTask2._2DLL
 {
     /// <summary>
-    /// Данный тип является типом многочлена и описывает перегруженные для него операции
+    /// The type describe polynomial
     /// </summary>
     public class Polynomial : ICloneable
     {
         /// <summary>
-        /// Данный список представляет одночлены сумма которых равна исходному многочлену
+        /// The list which contains all monomials. Polynomial is the sum of these monomials.
         /// </summary>
         public List<Monomial> Monomials { get; private set; }
 
@@ -26,8 +26,7 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Данный метод складывает одночлены у которых переменные одинаковой степени
-        /// и возвращает упорядоченную последовательность
+        /// The sum of the monomials with equal degrees
         /// </summary>
         /// <returns></returns>
         List<Monomial> GetWithoutTheSameMonomials()
@@ -40,8 +39,7 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Данный метод складывает многочлен и одночлен 
-        /// и возвращает упорядоченную последовательность
+        /// The sum of a polynomial and a monomial
         /// </summary>
         /// <returns></returns>
         public static Polynomial operator +(Polynomial polynomial,Monomial monomial)
@@ -59,16 +57,16 @@ namespace EpamTask2._2DLL
 
             return polynomialResult;
         }
+
         /// <summary>
-        /// Данный метод вычитает многочлен и одночлен 
-        /// и возвращает упорядоченную последовательность
+        /// The subtraction of a polynomial and a monomial
         /// </summary>
         /// <returns></returns>
         public static Polynomial operator -(Polynomial polynomial, Monomial monomial)
             => (polynomial + monomial * (-1));
 
         /// <summary>
-        /// Сумма многочленов
+        /// The sum of the polynomials
         /// </summary>
         /// <param name="first"></param>
         /// <param name="sec"></param>
@@ -81,8 +79,9 @@ namespace EpamTask2._2DLL
 
             return polynomial;
         }
+
         /// <summary>
-        /// Разность многочленов
+        /// The subtraction of the polynomials
         /// </summary>
         /// <param name="first"></param>
         /// <param name="sec"></param>
@@ -91,7 +90,7 @@ namespace EpamTask2._2DLL
             => (first + sec * (-1.0));
 
         /// <summary>
-        /// Умножение Многочлена на одночлен
+        /// The multiplication of a polynomial on a monomial
         /// </summary>
         /// <param name="polynomial"></param>
         /// <param name="monomial"></param>
@@ -106,7 +105,7 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Умножение Многочлена на многочлен
+        /// The multiplication of the polynomials
         /// </summary>
         /// <param name="polynomial"></param>
         /// <param name="monomial"></param>
@@ -121,7 +120,7 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Умножение многочлена на константное значение
+        /// The multiplication of a polynomial on a number
         /// </summary>
         /// <param name="polynomial"></param>
         /// <param name="number"></param>
@@ -147,8 +146,7 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Данный метод выполняет клонирование объект с помощью метода MemberwiseClone типа object
-        /// данный метод выполняет неглубокое копирование, но в данном случае он подходит
+        /// A method that performs a copy of an object
         /// </summary>
         /// <returns></returns>
         public object Clone()
@@ -161,9 +159,7 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Данный метод выполняет преобразование всего многочлена в строку типа StringBuilder.
-        /// StringBuilder используется так как операция Append используется довольно часто, и тип string здесь не сильно подойдёт
-        /// так как он представляет неизменяемую последовательность символов.
+        /// A method that performs conversation of current polynomial to string
         /// </summary>
         /// <returns></returns>
         StringBuilder GetAllPolynomial()
@@ -183,11 +179,8 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// В данном методе выполняется сравнение многолченов,
-        /// они считаются равными если содержат одинаковое кол-во одночленов и
-        /// каждому одночлену в одном многочлене соответствует такой же в другом многочлене
+        /// Override of a method Equals of type object
         /// </summary>
-        /// <param name="obj"></param>
         /// <returns></returns>
         public override bool Equals(object obj)
         {
@@ -206,14 +199,13 @@ namespace EpamTask2._2DLL
         }
 
         /// <summary>
-        /// Обычно рекомендуется переопределять GetHashCode при переопределении Equals()
-        /// В данном случае берётся метод от св-ва Degree
+        /// Usually recommended override GetHashCode if Equals already overrided
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode() => (Monomials.Count.GetHashCode());
 
         /// <summary>
-        /// Переопределение метода ToString() типа object
+        /// Override of a method ToString() ob type object
         /// </summary>
         /// <returns></returns>
         public override string ToString() => (GetAllPolynomial().ToString());      

@@ -11,6 +11,9 @@ namespace EpamTask2._2DLL.Tests
     [TestClass()]
     public class MonomialTests
     {
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod()]
         public void MonomialTestMultOnNum()
         {
