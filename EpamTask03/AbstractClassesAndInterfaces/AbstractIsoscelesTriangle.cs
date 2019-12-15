@@ -7,68 +7,104 @@ using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.AbstractClassesAndInterfaces
 {
+    /// <summary>
+    /// The class of a isosceles triangle 
+    /// </summary>
     public abstract class AbstractIsoscelesTriangle : AbstractShape
     {
-        public double SideA {
+        /// <summary>
+        /// Left side and right side should be equal
+        /// </summary>
+        public double LeftAndRightSide {
 
-            get => sideA;
+            get => leftAndRightSide;
 
             set
             {
                 ShapeException.CatchArgumentException(value);
 
-                if (value == sideB)
+                if (value == bottomSide)
+                    throw new ShapeException("Invalid argument!!!");
+                else if (2 * value <= bottomSide)
                     throw new ShapeException("Invalid argument!!!");
 
-                sideA = value;
+                leftAndRightSide = value;
 
             }
         }
 
-        public double SideB {
+        /// <summary>
+        /// Bottom side of a triangle
+        /// </summary>
+        public double BottomSide {
 
-            get => sideB;
+            get => bottomSide;
 
             set
             {
                 ShapeException.CatchArgumentException(value);
 
-                if (value == sideA)
+                if (value == leftAndRightSide)
+                    throw new ShapeException("Invalid argument!!!");
+                else if (2 * leftAndRightSide <= value)
                     throw new ShapeException("Invalid argument!!!");
 
-                sideB = value;
+                bottomSide = value;
             }
         } 
 
-        double sideA;
+        double leftAndRightSide;
 
-        double sideB;
+        double bottomSide;
 
+        /// <summary>
+        /// Constructor without parameters
+        /// </summary>
         public AbstractIsoscelesTriangle()
         {
-            sideA = default;
-            sideB = default;
+            bottomSide = leftAndRightSide = default;
         }
 
-        public AbstractIsoscelesTriangle(double sideA,double sideB)
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        /// <param name="radius"></param>
+        public AbstractIsoscelesTriangle(double leftAndRightSide, double bottomSide)
         {
-            SideA = sideA;
-            SideB = sideB;
+            LeftAndRightSide = leftAndRightSide;
+            BottomSide = bottomSide;
         }
 
-        public AbstractIsoscelesTriangle(double sideA,double sideB,AbstractShape shape) : this(sideA, sideB)
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
+        /// <param name="radius"></param>
+        public AbstractIsoscelesTriangle(double leftAndRightSide, double bottomSide, AbstractShape shape) : this(leftAndRightSide, bottomSide)
         {
             ShapeException.CatchSquareException(this, shape);
             ShapeException.CatchTypeException(this, shape);
         }
 
+        /// <summary>
+        /// Overrided method GetPerimeter
+        /// </summary>
+        /// <returns></returns>
         public override double GetPerimeter() 
-            => (2*sideA + sideB);
+            => (2*leftAndRightSide + bottomSide);
 
+        /// <summary>
+        /// Overrided method GetSquare
+        /// </summary>
+        /// <returns></returns>
         public override double GetSquare()
-            => ((0.5)*sideB*Math.Sqrt(Math.Pow(sideA,2) - Math.Pow((sideB/2),2)));
+            => ((0.5)* bottomSide * Math.Sqrt(Math.Pow(leftAndRightSide,2) - Math.Pow((bottomSide / 2),2)));
 
-        public override string ToString()
-            => ($"{this.GetType().Name};{sideA};{sideB}");
+
+
+        /// <summary>
+        /// Overrided method ToString
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() => ($"{this.GetType().Name};{LeftAndRightSide};{bottomSide}");
     }
 }

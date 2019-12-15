@@ -8,70 +8,76 @@ using EpamTask03.ExceptionClasses;
 namespace EpamTask03.AbstractClassesAndInterfaces
 {
     /// <summary>
-    /// The Abctract Class of a circle shape 
+    /// The Abctract Class of a rhombus shape 
     /// </summary>
-    public abstract class AbstractCircle : AbstractShape
+    public abstract class AbstractRhombus : AbstractShape
     {
         /// <summary>
-        /// Radius of a circle
+        /// Rhombus is a parallelogram where all 
+        /// sides are equal.
         /// </summary>
-        public double Radius
+        public double Side
         {
-            get => radius;
-      
+            get => side;
+
             set
             {
                 ShapeException.CatchArgumentException(value);
-                radius = value;
+
+                side = value;
             }
-
         }
 
-        double radius;
-        
-        /// <summary>
-        /// Constructor with one parameter
-        /// </summary>
-        /// <param name="radius"></param>
-        public AbstractCircle(double radius)
-        {
-            Radius = radius;
-        }
+        double side;
 
         /// <summary>
         /// Constructor without parameters
         /// </summary>
-        public AbstractCircle()
+        /// <param name="radius"></param>
+        public AbstractRhombus()
         {
-            radius = default;
+            side = default;
         }
 
         /// <summary>
-        /// Constructor with two parameters
+        /// Constructor with one parameter
         /// </summary>
         /// <param name="radius"></param>
-        public AbstractCircle(double radius,AbstractShape shape) : this(radius)
+        public AbstractRhombus(double side)
+        {
+            Side = side;
+        }
+
+        /// <summary>
+        /// Constructor with two parameter
+        /// </summary>
+        /// <param name="radius"></param>
+        public AbstractRhombus(double side, AbstractShape shape) : this(side)
         {
             ShapeException.CatchSquareException(this, shape);
             ShapeException.CatchTypeException(this, shape);
         }
 
+
         /// <summary>
         /// Overrided method GetPerimeter
         /// </summary>
         /// <returns></returns>
-        public override double GetPerimeter() => (2*Math.PI*Radius);
+        public override double GetPerimeter()
+                    => (4*side);
+
         /// <summary>
         /// Overrided method GetSquare
         /// </summary>
         /// <returns></returns>
-        public override double GetSquare() => (Math.PI*Math.Pow(Radius,2));
+        public override double GetSquare()
+            => (side*side*Math.Sin(Math.PI / 3.0));
 
 
         /// <summary>
         /// Overrided method ToString
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => ($"{this.GetType().Name};{Radius}");
+        public override string ToString() => ($"{this.GetType().Name};{side}");
     }
 }

@@ -8,6 +8,11 @@ using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.ClassesOfShapes
 {
+    /// <summary>
+    /// The class describes paper isosceles triangle shape,
+    /// The class inherits from AbstractIsoscelesTriangle 
+    /// class and implements IColor inteface
+    /// </summary>
     public class PaperIsoscelesTriangle : AbstractIsoscelesTriangle, IColor
     {
         public ConsoleColor Color
@@ -25,44 +30,55 @@ namespace EpamTask03.ClassesOfShapes
             }
         }
 
+        ConsoleColor backFieldColor = ConsoleColor.White;
 
-        ConsoleColor backFieldColor;
+        bool isSetted;
 
-        bool isSetted = false;
 
+        /// <summary>
+        /// Constructor without parameters
+        /// </summary>
         public PaperIsoscelesTriangle()
         {
-            Color = ConsoleColor.White;
         }
 
-        public PaperIsoscelesTriangle(double sideA,double sideB,ConsoleColor color) : base(sideA,sideB)
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperIsoscelesTriangle(double leftAndRightSide,double bottomSide) : base(leftAndRightSide,bottomSide)
+        {
+        }
+
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
+        public PaperIsoscelesTriangle(double leftAndRightSide, double bottomSide,ConsoleColor color) : base(leftAndRightSide, bottomSide)
         {
             Color = color;
         }
 
-        public PaperIsoscelesTriangle(double sideA,double sideB) : this(sideA, sideB, ConsoleColor.White)
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
+        public PaperIsoscelesTriangle(double leftAndRightSide, double bottomSide, string color) : this(leftAndRightSide, bottomSide, ColorParser.Parse(color))
         {
         }
 
-        public PaperIsoscelesTriangle(double sideA, double sideB,AbstractShape shape, ConsoleColor color) : base(sideA,sideB,shape)
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
+        public PaperIsoscelesTriangle(double leftAndRightSide, double bottomSide, AbstractShape shape) : base(leftAndRightSide, bottomSide, shape)
         {
-            Color = color;
-        }
-
-        public PaperIsoscelesTriangle(double sideA, double sideB, AbstractShape shape) : this(sideA, sideB, shape, ConsoleColor.White)
-        {
-        }
-
-        public PaperIsoscelesTriangle(double sideA, double sideB, string color) : this(sideA, sideB, ColorParser.Parse(color))
-        {
-        }
-
-        public PaperIsoscelesTriangle(double sideA,double sideB,AbstractShape shape, string color) : this(sideA, sideB, shape, ColorParser.Parse(color))
-        {
+            backFieldColor = (shape as IColor).Color;
         }
 
 
 
+
+        /// <summary>
+        /// Overrided method ToString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => ($"{base.ToString()};{Color}");
     }
 }

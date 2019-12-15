@@ -9,25 +9,25 @@ using EpamTask03.ExceptionClasses;
 namespace EpamTask03.ClassesOfShapes
 {
     /// <summary>
-    /// The class describes paper triangle shape,
-    /// The class inherits from AbstractTriangle 
+    /// The class describes paper parallelogram shape,
+    /// The class inherits from AbstractParallelogram 
     /// class and implements IColor inteface
     /// </summary>
-    public class PaperTriangle : AbstractTriangle, IColor
+    public class PaperParallelogram : AbstractParallelogram , IColor
     {
-        public ConsoleColor Color
-        {
+        public ConsoleColor Color {
 
             get => backFieldColor;
 
             set
             {
                 if (isSetted)
-                    throw new ColorException("The shape already painted");
+                    throw new ShapeException("The shape is already painted");
 
                 backFieldColor = value;
                 isSetted = true;
             }
+
         }
 
         ConsoleColor backFieldColor = ConsoleColor.White;
@@ -38,41 +38,39 @@ namespace EpamTask03.ClassesOfShapes
         /// <summary>
         /// Constructor without parameters
         /// </summary>
-        public PaperTriangle()
-        {   
+        public PaperParallelogram()
+        {
+        }
+
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperParallelogram(double leftAndRightSide,double bottomAndTopSide) : base(leftAndRightSide, bottomAndTopSide)
+        {
         }
 
         /// <summary>
         /// Constructor with three parameters
         /// </summary>
-        public PaperTriangle(double sideA, double sideB, double sideC) : base(sideA, sideB, sideC)
-        {
-        }
-
-        /// <summary>
-        /// Constructor with four parameters
-        /// </summary>
-        public PaperTriangle(double sideA, double sideB, double sideC, ConsoleColor color) : base(sideA, sideB, sideC)
+        public PaperParallelogram(double leftAndRightSide, double bottomAndTopSide,ConsoleColor color) : base(leftAndRightSide, bottomAndTopSide)
         {
             Color = color;
         }
 
         /// <summary>
-        /// Constructor with four parameters
+        /// Constructor with three parameters
         /// </summary>
-        public PaperTriangle(double sideA,double sideB,double sideC,string color) : this(sideA, sideB, sideC, ColorParser.Parse(color))
+        public PaperParallelogram(double leftAndRightSide, double bottomAndTopSide, string color) : this(leftAndRightSide, bottomAndTopSide, ColorParser.Parse(color))
         {
         }
 
         /// <summary>
-        /// Constructor with four parameters
+        /// Constructor with three parameters
         /// </summary>
-        public PaperTriangle(double sideA, double sideB, double sideC, AbstractShape shape) : base(sideA, sideB, sideC, shape)
+        public PaperParallelogram(double leftAndRightSide, double bottomAndTopSide,AbstractShape shape) : base(leftAndRightSide,bottomAndTopSide,shape)
         {
             backFieldColor = (shape as IColor).Color;
         }
-
-
 
 
         /// <summary>

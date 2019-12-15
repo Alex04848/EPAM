@@ -13,9 +13,17 @@ using System.Text.RegularExpressions;
 
 namespace EpamTask03.InputOutputClasses
 {
+    /// <summary>
+    /// The class IOStreams performs 
+    /// Input of data in XML file and Output data from XML File To List 
+    /// </summary>
     public static class IOStreams
     {
-
+        /// <summary>
+        /// The Method Performs input of Data in XML File
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="path"></param>
         public static void InputInXmlFile(Box box,string path)
         {
             if (!path.EndsWith(".xml"))
@@ -44,10 +52,15 @@ namespace EpamTask03.InputOutputClasses
 
         }
 
+        /// <summary>
+        /// The Method Performs output of Data in List
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="path"></param>
         public static List<AbstractShape> OutputInList(string path)
         {
             List<AbstractShape> shapes = new List<AbstractShape>();
-            Regex regex = new Regex($"(\\w+;)+\\w+");
+            Regex regex = new Regex($"(([\\w|,]+);)+\\w+");
 
             if (!path.EndsWith(".xml"))
                 throw new IOException("Incorrect file!!!");
@@ -69,7 +82,6 @@ namespace EpamTask03.InputOutputClasses
 
             return shapes;
         }
-
 
     }
 }

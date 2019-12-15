@@ -13,6 +13,11 @@ namespace EpamTask03.AbstractClassesAndInterfaces.Tests
     [TestClass()]
     public class AbstractIsoscelesTriangleTests
     {
+        /// <summary>
+        /// Test Method For AbstractIsoscelesTriangle.GetPerimeter()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(5, 8, 18)]
         [DataRow(4, 7, 15)]
@@ -31,6 +36,12 @@ namespace EpamTask03.AbstractClassesAndInterfaces.Tests
             Assert.AreEqual(expected, outValue);
         }
 
+
+        /// <summary>
+        /// Test Method For AbstractIsoscelesTriangle.GetSquare()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(15, 5, 37)]
         [DataRow(5, 8, 12)]

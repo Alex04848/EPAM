@@ -12,6 +12,11 @@ namespace EpamTask03.AbstractClassesAndInterfaces.Tests
     [TestClass()]
     public class AbstractEquilateralTriangleTests
     {
+        /// <summary>
+        /// Test Method For AbstractEquilateralTriangle.GetPerimeter()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(5, 15)]
         [DataRow(7, 21)]
@@ -30,7 +35,11 @@ namespace EpamTask03.AbstractClassesAndInterfaces.Tests
             Assert.AreEqual(expected, outValue);
         }
 
-
+        /// <summary>
+        /// Test Method For AbstractEquilateralTriangle.GetSquare()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(5, 11)]
         [DataRow(7, 21)]

@@ -8,6 +8,11 @@ using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03
 {
+    /// <summary>
+    /// The class describes paper rectangle shape,
+    /// The class inherits from AbstractRectangle 
+    /// class and implements IColor inteface
+    /// </summary>
     class PaperRectangle : AbstractRectangle, IColor
     {
         public ConsoleColor Color
@@ -25,45 +30,54 @@ namespace EpamTask03
             }
         }
 
+        ConsoleColor backFieldColor = ConsoleColor.White;
 
-        ConsoleColor backFieldColor;
+        bool isSetted;
 
-        bool isSetted = false;
 
-        public PaperRectangle(double width,double height,ConsoleColor color) : base(width,height)
-        {
-            Color = color;
-        }
-
-        public PaperRectangle(double width,double height) : this(width, height, ConsoleColor.White)
-        {
-        }
-
+        /// <summary>
+        /// Constructor without parameters
+        /// </summary>
         public PaperRectangle()
         {
-            Color = ConsoleColor.White;
         }
 
-        public PaperRectangle(double width, double height, AbstractShape shape) : this(width, height, shape,ConsoleColor.White)
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperRectangle(double width,double height) : base(width, height)
         {
         }
 
-        public PaperRectangle(double width,double height,AbstractShape shape, ConsoleColor color) : base(width,height,shape)
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
+        public PaperRectangle(double width, double height, ConsoleColor color) : base(width, height)
         {
             Color = color;
         }
 
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
         public PaperRectangle(double width, double height, string color) : this(width, height, ColorParser.Parse(color))
         {
         }
 
-        public PaperRectangle(double width,double height,AbstractShape shape, string color) : this(width, height,shape, ColorParser.Parse(color))
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
+        public PaperRectangle(double width, double height, AbstractShape shape) : base(width, height, shape)
         {
+            backFieldColor = (shape as IColor).Color;
         }
 
 
 
-
+        /// <summary>
+        /// Overrided method ToString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => ($"{base.ToString()};{Color}");
     }
 }

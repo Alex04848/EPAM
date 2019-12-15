@@ -58,7 +58,10 @@
     <Compile Include="AbstractClassesAndInterfaces\AbstractCircleTests.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractEquilateralTriangleTests.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractIsoscelesTriangleTests.cs" />
+    <Compile Include="AbstractClassesAndInterfaces\AbstractParallelogramTests.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractRectangleTests.cs" />
+    <Compile Include="AbstractClassesAndInterfaces\AbstractRhombusTests.cs" />
+    <Compile Include="AbstractClassesAndInterfaces\AbstractSquareTests.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractTriangleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

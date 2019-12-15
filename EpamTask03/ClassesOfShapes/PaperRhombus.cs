@@ -9,21 +9,19 @@ using EpamTask03.ExceptionClasses;
 namespace EpamTask03.ClassesOfShapes
 {
     /// <summary>
-    /// The class describes paper triangle shape,
-    /// The class inherits from AbstractTriangle 
+    /// The class describes paper rhombus shape,
+    /// The class inherits from AbstractRhombus 
     /// class and implements IColor inteface
     /// </summary>
-    public class PaperTriangle : AbstractTriangle, IColor
+    public class PaperRhombus : AbstractRhombus, IColor
     {
-        public ConsoleColor Color
-        {
+        public ConsoleColor Color {
 
             get => backFieldColor;
 
-            set
-            {
+            set {
                 if (isSetted)
-                    throw new ColorException("The shape already painted");
+                    throw new ShapeException("The shape is already painted");
 
                 backFieldColor = value;
                 isSetted = true;
@@ -35,43 +33,43 @@ namespace EpamTask03.ClassesOfShapes
         bool isSetted;
 
 
+
         /// <summary>
         /// Constructor without parameters
         /// </summary>
-        public PaperTriangle()
-        {   
-        }
-
-        /// <summary>
-        /// Constructor with three parameters
-        /// </summary>
-        public PaperTriangle(double sideA, double sideB, double sideC) : base(sideA, sideB, sideC)
+        public PaperRhombus()
         {
         }
 
         /// <summary>
-        /// Constructor with four parameters
+        /// Constructor with one parameter
         /// </summary>
-        public PaperTriangle(double sideA, double sideB, double sideC, ConsoleColor color) : base(sideA, sideB, sideC)
+        public PaperRhombus(double side) : base(side)
+        {
+        }
+
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperRhombus(double side, ConsoleColor color) : base(side)
         {
             Color = color;
         }
 
         /// <summary>
-        /// Constructor with four parameters
+        /// Constructor with two parameters
         /// </summary>
-        public PaperTriangle(double sideA,double sideB,double sideC,string color) : this(sideA, sideB, sideC, ColorParser.Parse(color))
+        public PaperRhombus(double side,string color) : this(side, ColorParser.Parse(color))
         {
         }
 
         /// <summary>
-        /// Constructor with four parameters
+        /// Constructor with two parameters
         /// </summary>
-        public PaperTriangle(double sideA, double sideB, double sideC, AbstractShape shape) : base(sideA, sideB, sideC, shape)
+        public PaperRhombus(double side,AbstractShape shape) : base(side, shape)
         {
             backFieldColor = (shape as IColor).Color;
         }
-
 
 
 

@@ -8,49 +8,47 @@ using EpamTask03.ExceptionClasses;
 namespace EpamTask03.AbstractClassesAndInterfaces
 {
     /// <summary>
-    /// The Abctract Class of a circle shape 
+    /// The Abctract Class of a square shape 
     /// </summary>
-    public abstract class AbstractCircle : AbstractShape
+    public abstract class AbstractSquare : AbstractShape
     {
         /// <summary>
-        /// Radius of a circle
+        /// All sides are equal
         /// </summary>
-        public double Radius
-        {
-            get => radius;
-      
+        public double Side {
+
+            get => side;
+
             set
             {
                 ShapeException.CatchArgumentException(value);
-                radius = value;
+                side = value;
             }
-
         }
 
-        double radius;
-        
-        /// <summary>
-        /// Constructor with one parameter
-        /// </summary>
-        /// <param name="radius"></param>
-        public AbstractCircle(double radius)
-        {
-            Radius = radius;
-        }
+        double side;
+
 
         /// <summary>
         /// Constructor without parameters
         /// </summary>
-        public AbstractCircle()
+        public AbstractSquare()
         {
-            radius = default;
+            side = default;
+        }
+
+        /// <summary>
+        /// Constructor with one parameter
+        /// </summary>
+        public AbstractSquare(double side)
+        {
+            Side = side;
         }
 
         /// <summary>
         /// Constructor with two parameters
         /// </summary>
-        /// <param name="radius"></param>
-        public AbstractCircle(double radius,AbstractShape shape) : this(radius)
+        public AbstractSquare(double side,AbstractShape shape) : this(side)
         {
             ShapeException.CatchSquareException(this, shape);
             ShapeException.CatchTypeException(this, shape);
@@ -60,18 +58,21 @@ namespace EpamTask03.AbstractClassesAndInterfaces
         /// Overrided method GetPerimeter
         /// </summary>
         /// <returns></returns>
-        public override double GetPerimeter() => (2*Math.PI*Radius);
+        public override double GetPerimeter()
+                => (4*side);
+
         /// <summary>
         /// Overrided method GetSquare
         /// </summary>
         /// <returns></returns>
-        public override double GetSquare() => (Math.PI*Math.Pow(Radius,2));
+        public override double GetSquare()
+                => (side*side);
 
 
         /// <summary>
         /// Overrided method ToString
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => ($"{this.GetType().Name};{Radius}");
+        public override string ToString() => ($"{this.GetType().Name};{side}");
     }
 }

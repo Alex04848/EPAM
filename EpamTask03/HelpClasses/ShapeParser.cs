@@ -10,8 +10,16 @@ using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.HelpClasses
 {
+    /// <summary>
+    /// This class is for parsing a shape from CSV string
+    /// </summary>
     public static class ShapeParser
     {
+        /// <summary>
+        /// The method which parse CSV string
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
         public static AbstractShape Parse(string values)
         {
             AbstractShape shape = null;
@@ -39,6 +47,18 @@ namespace EpamTask03.HelpClasses
                     shape = new FilmTriangle(Double.Parse(valuesInList[1]), Double.Parse(valuesInList[2]), Double.Parse(valuesInList[3]));
                     break;
 
+                case "FilmParallelogram":
+                    shape = new FilmParallelogram(Double.Parse(valuesInList[1]), Double.Parse(valuesInList[2]));
+                    break;
+
+                case "FilmSquare":
+                    shape = new FilmSquare(Double.Parse(valuesInList[1]));
+                    break;
+
+                case "FilmRhombus":
+                    shape = new FilmRhombus(Double.Parse(valuesInList[1]));
+                    break;
+
                 case "PaperCircle":
                     shape = new PaperCircle(Double.Parse(valuesInList[1]), ColorParser.Parse(valuesInList[2]));
                     break;
@@ -60,6 +80,19 @@ namespace EpamTask03.HelpClasses
                                                 Double.Parse(valuesInList[3]),ColorParser.Parse(valuesInList[3]));
                     break;
 
+                case "PaperParallelogram":
+                    shape = new PaperParallelogram(Double.Parse(valuesInList[1]), Double.Parse(valuesInList[2]),ColorParser.Parse(valuesInList[4]));
+                    break;
+
+                case "PaperSquare":
+                    shape = new PaperSquare(Double.Parse(valuesInList[1]),ColorParser.Parse(valuesInList[2]));
+                    break;
+
+                case "PaperRhombus":
+                    shape = new PaperRhombus(Double.Parse(valuesInList[1]),ColorParser.Parse(valuesInList[2]));
+                    break;
+
+
                 default:
                         throw new ShapeException("The type doesn't exist");
 
@@ -68,8 +101,6 @@ namespace EpamTask03.HelpClasses
 
             return shape;
         }
-
-
 
     }
 }

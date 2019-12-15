@@ -11,10 +11,14 @@ namespace EpamTask03.Tests
     [TestClass()]
     public class AbstractRectangleTests
     {
-
+        /// <summary>
+        /// Test Method For AbstractRectangle.GetPerimeter()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(2,4,12)]
-        [DataRow(5,5,20)]
+        [DataRow(5,10,30)]
         [DataRow(7,8,30)]
         public void TestForPerimeter(double width,double height,double result)
         {
@@ -29,10 +33,14 @@ namespace EpamTask03.Tests
             Assert.AreEqual(expected, outValue);
         }
 
-
+        /// <summary>
+        /// Test Method For AbstractRectangle.GetSquare()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(2, 4, 8)]
-        [DataRow(5, 5, 25)]
+        [DataRow(5, 9, 45)]
         [DataRow(7, 8, 56)]
         public void TestForSquare(double width, double height, double result)
         {

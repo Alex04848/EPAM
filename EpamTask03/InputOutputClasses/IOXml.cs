@@ -12,11 +12,19 @@ using EpamTask03.HelpClasses;
 
 namespace EpamTask03.InputOutputClasses
 {
+    /// <summary>
+    /// The class IOml performs 
+    /// Input of data in XML file and Output data from XML File To List 
+    /// </summary>
     public static class IOXml
     {
+        /// <summary>
+        /// The Method Performs input of Data in XML File
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="path"></param>
         public static void InputInXmlFile(Box box,string path)
         {
-            // I should Create my own Exception, but I will do this later!!!
             if (!path.EndsWith(".xml"))
                 throw new IOException();
 
@@ -69,11 +77,15 @@ namespace EpamTask03.InputOutputClasses
 
         }
 
+        /// <summary>
+        /// The Method Performs output of Data in List
+        /// </summary>
+        /// <param name="box"></param>
+        /// <param name="path"></param>
         public static List<AbstractShape> OutputInList(string path)
         {
             List<AbstractShape> shapes = new List<AbstractShape>();
 
-            // I should Create my own Exception, but I will do this later!!!
             if (!path.EndsWith(".xml"))
                 throw new IOException();
 
@@ -94,7 +106,6 @@ namespace EpamTask03.InputOutputClasses
 
             return shapes;
         }
-
 
     }
 }

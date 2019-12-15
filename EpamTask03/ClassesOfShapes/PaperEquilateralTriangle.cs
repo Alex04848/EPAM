@@ -8,6 +8,11 @@ using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.ClassesOfShapes
 {
+    /// <summary>
+    /// The class describes paper equilateral triangle shape,
+    /// The class inherits from AbstractEquilateralTriangle 
+    /// class and implements IColor inteface
+    /// </summary>
     public class PaperEquilateralTriangle : AbstractEquilateralTriangle, IColor
     {
         public ConsoleColor Color
@@ -25,43 +30,53 @@ namespace EpamTask03.ClassesOfShapes
             }
         }
 
-        ConsoleColor backFieldColor;
+        ConsoleColor backFieldColor = ConsoleColor.White;
 
-        bool isSetted = false;
+        bool isSetted;
 
-        public PaperEquilateralTriangle(double side,ConsoleColor color) : base(side)
-        {
-            Color = color;
-        }
 
-        public PaperEquilateralTriangle(double side) : this(side, ConsoleColor.White)
-        {
-        }
-
+        /// <summary>
+        /// Constructor without parameters
+        /// </summary>
         public PaperEquilateralTriangle()
         {
-            Color = ConsoleColor.White;
         }
 
-        public PaperEquilateralTriangle(double side,AbstractShape shape) : this(side,shape,ConsoleColor.White)
+        /// <summary>
+        /// Constructor with one parameter
+        /// </summary>
+        public PaperEquilateralTriangle(double side) : base(side)
         {
         }
 
-        public PaperEquilateralTriangle(double side,AbstractShape shape,ConsoleColor color) : base(side,shape)
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperEquilateralTriangle(double side, ConsoleColor color) : base(side)
         {
             Color = color;
         }
 
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
         public PaperEquilateralTriangle(double side,string color) : this(side, ColorParser.Parse(color))
         {
         }
 
-        public PaperEquilateralTriangle(double side,AbstractShape shape,string color) : this(side, shape, ColorParser.Parse(color))
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperEquilateralTriangle(double side, AbstractShape shape) : base(side,shape)
         {
+            backFieldColor = (shape as IColor).Color;
         }
 
 
-
+        /// <summary>
+        /// Overrided method ToString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => ($"{base.ToString()};{Color}");
     }
 }

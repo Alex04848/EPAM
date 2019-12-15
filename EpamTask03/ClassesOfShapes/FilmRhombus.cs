@@ -8,29 +8,29 @@ using EpamTask03.AbstractClassesAndInterfaces;
 namespace EpamTask03.ClassesOfShapes
 {
     /// <summary>
-    /// The trianle from film material
+    /// The rhombus from film material
     /// </summary>
-    public class FilmTriangle : AbstractTriangle
+    public class FilmRhombus : AbstractRhombus
     {
         /// <summary>
         /// Constructor without parameters
         /// </summary>
-        public FilmTriangle()
+        public FilmRhombus()
         {
         }
 
         /// <summary>
-        /// Constructor with three parameters
+        /// Constructor with one parameter
         /// </summary>
-        public FilmTriangle(double sideA,double sideB,double sideC) : base(sideA, sideB, sideC)
+        public FilmRhombus(double side) : base(side)
         {
         }
 
         /// <summary>
-        /// Constructor with four parameters
+        /// Constructor with two parameters
         /// </summary>
-        public FilmTriangle(double sideA,double sideB,double sideC,AbstractShape shape) : base(sideA,sideB,sideC,shape)
-        { 
+        public FilmRhombus(double side, AbstractRhombus shape) : base(side,shape)
+        {
         }
     }
 }

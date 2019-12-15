@@ -1,0 +1,42 @@
+<Box>
+	<FilmRectangle Values="FilmRectangle;8;5">
+		<Perimeter>26</Perimeter>
+		<Square>40</Square>
+	</FilmRectangle>
+	<FilmParallelogram Values="FilmParallelogram;4;7;29,845130209103">
+		<Perimeter>22</Perimeter>
+		<Square>14</Square>
+	</FilmParallelogram>
+	<PaperCircle Values="PaperCircle;2,5;Green">
+		<Perimeter>15,707963267949</Perimeter>
+		<Square>19,6349540849362</Square>
+	</PaperCircle>
+	<PaperParallelogram Values="PaperParallelogram;4;7;29,845130209103;White">
+		<Perimeter>22</Perimeter>
+		<Square>14</Square>
+	</PaperParallelogram>
+	<FilmIsoscelesTriangle Values="FilmIsoscelesTriangle;2;3">
+		<Perimeter>7</Perimeter>
+		<Square>1,98431348329844</Square>
+	</FilmIsoscelesTriangle>
+	<FilmCircle Values="FilmCircle;5">
+		<Perimeter>31,4159265358979</Perimeter>
+		<Square>78,5398163397448</Square>
+	</FilmCircle>
+	<FilmRhombus Values="FilmRhombus;2,5">
+		<Perimeter>10</Perimeter>
+		<Square>5,41265877365274</Square>
+	</FilmRhombus>
+	<PaperSquare Values="PaperSquare;5,5;DarkMagenta">
+		<Perimeter>22</Perimeter>
+		<Square>30,25</Square>
+	</PaperSquare>
+	<PaperTriangle Values="PaperTriangle;2;3;4;Magenta">
+		<Perimeter>9</Perimeter>
+		<Square>2,90473750965556</Square>
+	</PaperTriangle>
+	<FilmTriangle Values="FilmTriangle;2;3;4">
+		<Perimeter>9</Perimeter>
+		<Square>2,90473750965556</Square>
+	</FilmTriangle>
+</Box>

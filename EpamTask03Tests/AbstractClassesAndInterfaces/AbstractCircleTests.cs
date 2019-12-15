@@ -12,8 +12,11 @@ namespace EpamTask03.AbstractClassesAndInterfaces.Tests
     [TestClass()]
     public class AbstractCircleTests
     {
-        public TestContext TestContext { get; set; }
-
+        /// <summary>
+        /// Test Method For AbstractCircle.GetPerimeter()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(5, 31)]
         [DataRow(2, 13)]
@@ -32,6 +35,11 @@ namespace EpamTask03.AbstractClassesAndInterfaces.Tests
             Assert.AreEqual(expected, outValue);
         }
 
+        /// <summary>
+        /// Test Method For AbstractCircle.GetSquare()
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="result"></param>
         [DataTestMethod()]
         [DataRow(5, 79)]
         [DataRow(2, 13)]

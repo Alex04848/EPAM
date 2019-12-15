@@ -8,6 +8,12 @@ using EpamTask03.ExceptionClasses;
 
 namespace EpamTask03.ClassesOfShapes
 {
+
+    /// <summary>
+    /// The class describes paper circle shape,
+    /// The class inherits from AbsctractCircle 
+    /// class and implements IColor inteface
+    /// </summary>
     public class PaperCircle : AbstractCircle, IColor
     {
         public ConsoleColor Color {
@@ -24,45 +30,54 @@ namespace EpamTask03.ClassesOfShapes
             }
         }
 
-        ConsoleColor backFieldColor;
+        ConsoleColor backFieldColor = ConsoleColor.White;
 
-        bool isSetted = false;
+        bool isSetted;
 
+
+        /// <summary>
+        /// Constructor without parameters
+        /// </summary>
+        public PaperCircle()
+        {
+        }
+
+        /// <summary>
+        /// Constructor with one parameter
+        /// </summary>
+        public PaperCircle(double radius) : base(radius)
+        {
+        }
+
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
         public PaperCircle(double radius, ConsoleColor color) : base(radius)
         {
             Color = color;
         }
 
-        public PaperCircle(double radius, AbstractShape shape, ConsoleColor color) : base(radius, shape)
-        {
-            Color = color;
-        }
-
-        public PaperCircle(double radius) : base(radius)
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperCircle(double radius, string color) : this(radius, ColorParser.Parse(color))
         {
         }
 
-        public PaperCircle()
+        /// <summary>
+        /// Constructor with two parameters
+        /// </summary>
+        public PaperCircle(double radius,AbstractShape shape) : base(radius,shape)
         {
-            Color = ConsoleColor.White;
-        }
-
-        public PaperCircle(double radius,AbstractShape shape) : this(radius, shape, ConsoleColor.White)
-        {
-        }
-
-        public PaperCircle(double radius,string color) : this(radius, ColorParser.Parse(color))
-        {
-        }
-
-        public PaperCircle(double radius,AbstractShape shape,string color) : this(radius,shape, ColorParser.Parse(color))
-        {
-
+            backFieldColor = (shape as IColor).Color;
         }
 
 
-
-
+        
+        /// <summary>
+        /// Overrided method ToString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => ($"{base.ToString()};{Color}");
     }
 }
