@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace EpamTask04.Parser
 {
+    /// <summary>
+    /// Parser for translit that uses a dictionary for parsing values
+    /// </summary>
     public static class TranslitParser
     {
+        /// <summary>
+        /// Dictionary with big letters
+        /// </summary>
         static Dictionary<char, string> keyValuePairsBig = new Dictionary<char, string>()
         {
             ['А'] = "A",
@@ -45,15 +51,33 @@ namespace EpamTask04.Parser
             ['Я'] = "YA",
         };
 
+        /// <summary>
+        /// Dictionary with little letters
+        /// </summary>
         static Dictionary<char, string> keyValuePairsLittle = keyValuePairsBig
             .ToDictionary(key => key.Key.ToString().ToLower().First(), value => value.Value.ToLower());
 
+        /// <summary>
+        /// Check for big russian letter
+        /// </summary>
+        /// <param name="letter"></param>
+        /// <returns></returns>
         static bool IsBigRussianLetter(char letter)
             => (letter >= 'А' && letter <= 'Я');
 
+        /// <summary>
+        /// Check for little russian letter
+        /// </summary>
+        /// <param name="letter"></param>
+        /// <returns></returns>
         static bool IsLittleRussianLetter(char letter)
             => (letter >= 'а' && letter <= 'я');
 
+        /// <summary>
+        /// ToTranslit Method
+        /// </summary>
+        /// <param name="pattern"></param>
+        /// <returns></returns>
         public static string ToTranslit(string pattern)
         {
             if (String.IsNullOrEmpty(pattern))

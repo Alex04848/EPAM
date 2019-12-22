@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask04.Exceptions
 {
+    /// <summary>
+    /// Exception Class for Server
+    /// </summary>
     public class ServerException : Exception
     {
         public ServerException()
