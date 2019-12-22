@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using EpamTask04.Exceptions;
 
 namespace EpamTask04.ServerAndClient.Tests
 {
@@ -89,6 +90,69 @@ namespace EpamTask04.ServerAndClient.Tests
             //assert
             Assert.IsTrue(check);
         }
+
+        /// <summary>
+        /// Creating of the Server From Valid Values
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
+        [DataTestMethod()]
+        [DataRow("127.0.0.1",256)]
+        public void CreateServerFromValidValues(string ip,int port)
+        {
+            //act
+            Server server = new Server(ip, port);
+
+            //assert
+            Assert.IsTrue(server != null && server.IPAdressOfServer != null);
+        }
+
+
+        /// <summary>
+        /// Creating of the Server From Invalid Values
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
+        [DataTestMethod()]
+        [DataRow("127.0.0.1", -90)]
+        [DataRow("", 90)]
+        public void CreateServerFromInvalidValues(string ip, int port)
+        {
+            //assert
+            Assert.ThrowsException<ServerException>(() => new Server(ip,port));
+        }
+
+        /// <summary>
+        /// Creating of the Client From Valid Values
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
+        [DataTestMethod()]
+        [DataRow("127.0.0.1", 256)]
+        public void CreateClientFromValidValues(string ip, int port)
+        {
+            //act
+            Client client = new Client(ip, port);
+
+            //assert
+            Assert.IsTrue(client != null && client.IPAdressForConnection != null);
+        }
+
+
+        /// <summary>
+        /// Creating of the Client From Invalid Values
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
+        [DataTestMethod()]
+        [DataRow("127.0.0.1", -90)]
+        [DataRow(null, 90)]
+        public void CreateClientFromInvalidValues(string ip, int port)
+        {
+            //assert
+            Assert.ThrowsException<ClientException>(() => new Client(ip, port));
+        }
+
 
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using EpamTask04.Exceptions;
 
 
 namespace EpamTask04.ServerAndClient
@@ -44,9 +45,8 @@ namespace EpamTask04.ServerAndClient
 
             private set
             {
-                //I should create my own exception class
                 if (value < 0)
-                    throw new ArgumentOutOfRangeException();
+                    throw new ServerException("Invalid Port");
 
                 port = value;
             }
@@ -62,9 +62,8 @@ namespace EpamTask04.ServerAndClient
 
             private set
             {
-                //I should create my own exception class
                 if (String.IsNullOrEmpty(value))
-                    throw new FormatException();
+                    throw new ServerException("Invalid IPAdress");
 
                 ip = value;
             }
