@@ -43,11 +43,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassesOfDataStructure\ITreePrinter.cs" />
+    <Compile Include="ClassesOfDataStructure\TreeDeleteNodes.cs" />
+    <Compile Include="ClassesOfDataStructure\TreeFindAndContains.cs" />
+    <Compile Include="ExceptionClasses\GradeException.cs" />
+    <Compile Include="ExceptionClasses\TreeException.cs" />
+    <Compile Include="GradeOfTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClassesOfDataStructure\Tree.cs" />
     <Compile Include="ClassesOfDataStructure\TreeNode.cs" />
     <Compile Include="ClassesOfDataStructure\TreePrinter.cs" />
+    <Compile Include="SerializationToXML\TreeSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

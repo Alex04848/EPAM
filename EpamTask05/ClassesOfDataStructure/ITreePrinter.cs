@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace EpamTask05
 {
-    public interface ITreePrinter<T>
+    /// <summary>
+    /// The Interface which contains method for printing a tree.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public interface ITreePrinter<T> where T : new()
     {
-        void PrintTree(TreeNode<T> root);
+        /// <summary>
+        /// Print tree method
+        /// </summary>
+        /// <param name="root"></param>
+        void PrintTree(Tree<T> root);
     }
 }

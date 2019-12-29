@@ -6,11 +6,24 @@ using System.Threading.Tasks;
 
 namespace EpamTask05
 {
-    public class TreePrinter<T> : ITreePrinter<T>
+    /// <summary>
+    /// The class which implements ITreePrinter Interface and print tree to console 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class TreePrinter<T> : ITreePrinter<T> where T : new()
     {
-        public void PrintTree(TreeNode<T> root)
-            => PrintTree(root, 0);
-
+        /// <summary>
+        /// The method of an interface
+        /// </summary>
+        /// <param name="tree"></param>
+        public void PrintTree(Tree<T> tree)  
+             => PrintTree(tree.Root, 0);
+        
+        /// <summary>
+        /// Private Print Tree Method
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="step"></param>
         void PrintTree(TreeNode<T> root,int step)
         {
             if (root != null)
@@ -20,7 +33,6 @@ namespace EpamTask05
                 PrintTree(root.Left, (step + 1));
             }
         }
-
 
     }
 }
