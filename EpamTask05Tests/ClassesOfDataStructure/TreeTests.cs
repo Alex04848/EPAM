@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask05.ExceptionClasses;
+using EpamTask05.ClassesOfDataStructure;
 
 namespace EpamTask05.Tests
 {

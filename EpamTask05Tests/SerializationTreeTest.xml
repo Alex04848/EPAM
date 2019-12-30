@@ -1,37 +1,37 @@
 <?xml version="1.0"?>
 <TreeOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Root>
-    <Value>50</Value>
+    <Value>24</Value>
     <Left>
-      <Value>24</Value>
+      <Value>23</Value>
       <Left>
-        <Value>23</Value>
-        <Left>
-          <Value>2</Value>
+        <Value>2</Value>
+        <Right>
+          <Value>5</Value>
           <Right>
-            <Value>5</Value>
-            <Right>
-              <Value>7</Value>
-            </Right>
+            <Value>7</Value>
           </Right>
-        </Left>
+        </Right>
       </Left>
-      <Right>
+    </Left>
+    <Right>
+      <Value>50</Value>
+      <Left>
         <Value>46</Value>
         <Left>
           <Value>32</Value>
         </Left>
-      </Right>
-    </Left>
-    <Right>
-      <Value>79</Value>
-      <Left>
-        <Value>58</Value>
       </Left>
       <Right>
-        <Value>99</Value>
+        <Value>79</Value>
+        <Left>
+          <Value>58</Value>
+        </Left>
         <Right>
-          <Value>104</Value>
+          <Value>99</Value>
+          <Right>
+            <Value>104</Value>
+          </Right>
         </Right>
       </Right>
     </Right>

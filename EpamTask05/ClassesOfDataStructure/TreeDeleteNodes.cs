@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EpamTask05
+namespace EpamTask05.ClassesOfDataStructure
 {
     /// <summary>
     /// The part of tree class which performs deleting of nodes

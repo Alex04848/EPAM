@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EpamTask05
+namespace EpamTask05.ClassesOfDataStructure
 {
     /// <summary>
     /// The part of class which perfroms comparing between nodes

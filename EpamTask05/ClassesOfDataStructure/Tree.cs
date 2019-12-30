@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EpamTask05
+namespace EpamTask05.ClassesOfDataStructure
 {
     /// <summary>
     /// The class which descibes Binary Tree, 
@@ -22,13 +22,12 @@ namespace EpamTask05
         public TreeNode<T> Root { get; set; }
 
         public Tree(T data) : this(new TreeNode<T>(data))
-        {
-
+        {         
         }
 
         public Tree(TreeNode<T> treeNode)
         {
-            Root = treeNode;
+            Root = treeNode ?? throw new TreeException("The node can't be null");
         }
 
         public Tree() : this(new T())
@@ -59,14 +58,20 @@ namespace EpamTask05
             if (nodeForAdd > nodeOfTree)
             {
                 if (nodeOfTree.Right == null)
+                {
                     nodeOfTree.Right = nodeForAdd;
+                    Root = Balance(Root);
+                }
                 else
                     AddNode(nodeOfTree.Right, nodeForAdd);
             }
             else if (nodeForAdd < nodeOfTree)
             {
                 if (nodeOfTree.Left == null)
+                {
                     nodeOfTree.Left = nodeForAdd;
+                    Root = Balance(Root);
+                }
                 else
                     AddNode(nodeOfTree.Left, nodeForAdd);
             }

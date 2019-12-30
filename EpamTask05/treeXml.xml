@@ -3,61 +3,94 @@
   <Root>
     <Value>50</Value>
     <Left>
-      <Value>23</Value>
+      <Value>18</Value>
       <Left>
-        <Value>4</Value>
+        <Value>16</Value>
         <Left>
-          <Value>3</Value>
+          <Value>6</Value>
           <Left>
             <Value>2</Value>
           </Left>
+          <Right>
+            <Value>8</Value>
+            <Right>
+              <Value>10</Value>
+            </Right>
+          </Right>
         </Left>
         <Right>
-          <Value>8</Value>
+          <Value>17</Value>
         </Right>
       </Left>
       <Right>
-        <Value>34</Value>
+        <Value>39</Value>
+        <Left>
+          <Value>20</Value>
+          <Right>
+            <Value>24</Value>
+            <Right>
+              <Value>35</Value>
+            </Right>
+          </Right>
+        </Left>
         <Right>
-          <Value>47</Value>
+          <Value>46</Value>
+          <Left>
+            <Value>45</Value>
+          </Left>
         </Right>
       </Right>
     </Left>
     <Right>
-      <Value>53</Value>
-      <Right>
-        <Value>63</Value>
+      <Value>66</Value>
+      <Left>
+        <Value>53</Value>
         <Left>
-          <Value>54</Value>
+          <Value>52</Value>
         </Left>
         <Right>
-          <Value>85</Value>
+          <Value>62</Value>
           <Left>
-            <Value>66</Value>
-            <Left>
-              <Value>65</Value>
-            </Left>
+            <Value>57</Value>
             <Right>
-              <Value>74</Value>
+              <Value>61</Value>
+              <Left>
+                <Value>60</Value>
+              </Left>
+            </Right>
+          </Left>
+        </Right>
+      </Left>
+      <Right>
+        <Value>78</Value>
+        <Left>
+          <Value>73</Value>
+          <Left>
+            <Value>68</Value>
+            <Right>
+              <Value>69</Value>
               <Right>
-                <Value>79</Value>
-                <Left>
-                  <Value>76</Value>
-                  <Right>
-                    <Value>77</Value>
-                  </Right>
-                </Left>
-                <Right>
-                  <Value>83</Value>
-                </Right>
+                <Value>70</Value>
               </Right>
             </Right>
           </Left>
           <Right>
-            <Value>89</Value>
-            <Right>
-              <Value>96</Value>
-            </Right>
+            <Value>76</Value>
+            <Left>
+              <Value>74</Value>
+            </Left>
+          </Right>
+        </Left>
+        <Right>
+          <Value>86</Value>
+          <Right>
+            <Value>97</Value>
+            <Left>
+              <Value>91</Value>
+              <Right>
+                <Value>92</Value>
+              </Right>
+            </Left>
           </Right>
         </Right>
       </Right>

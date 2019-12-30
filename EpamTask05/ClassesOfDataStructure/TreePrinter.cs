@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EpamTask05
+namespace EpamTask05.ClassesOfDataStructure
 {
     /// <summary>
     /// The class which implements ITreePrinter Interface and print tree to console 
