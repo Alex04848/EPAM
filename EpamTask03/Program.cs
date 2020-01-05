@@ -14,16 +14,16 @@ namespace EpamTask03
     class Program
     {
         static Box box = new Box(new List<AbstractShape>() {
-            new FilmRectangle(8.0,5.0),
-            new FilmParallelogram(4.0,7.0),
-            new PaperCircle(2.5,"Green"),
-            new FilmSquare(5.0),
-            new PaperSquare(4.0,ConsoleColor.Cyan),
-            new FilmIsoscelesTriangle(2.0, 3.0),
-            new FilmCircle(5.0),
-            new FilmRhombus(2.5),
-            new PaperSquare(5.5,ConsoleColor.DarkMagenta),
-            new PaperTriangle(2.0,3.0,4.0,"Magenta")
+                new FilmRectangle(8.0,5.0),
+                new FilmParallelogram(4.0,7.0),
+                new PaperCircle(2.5,"Green"),
+                new FilmSquare(5.0),
+                new PaperSquare(4.0,ConsoleColor.Cyan),
+                new FilmIsoscelesTriangle(2.0, 3.0),
+                new FilmCircle(5.0),
+                new FilmRhombus(2.5),
+                new PaperSquare(5.5,ConsoleColor.DarkMagenta),
+                new PaperTriangle(2.0,3.0,4.0,"Magenta")
         });
 
         static int indexForView = 5;
@@ -39,12 +39,18 @@ namespace EpamTask03
 
         static void Main(string[] args)
         {
+
+            Console.ReadKey();
+        }
+
+        public static void TestOfMethods()
+        {
             //Test value for method AddShape of Box class, 
             //there are no shapes of equal Types, because the method controls all inputed data
             box.AddShape(new FilmTriangle(2.0, 3.0, 4.0));
 
             //View For All Shapes
-           // box.Shapes.ForEach(shape => shape.Display());
+            // box.Shapes.ForEach(shape => shape.Display());
 
             //View For Index
             Console.WriteLine($"box[{indexForView}] = {box[indexForView]}");
@@ -105,10 +111,9 @@ namespace EpamTask03
             Console.WriteLine();
 
             newBoxForLoad.Shapes.ForEach(shape => shape.Display());
-
-
-
-            Console.ReadKey();
         }
+
     }
 }
+
+

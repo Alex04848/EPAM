@@ -22,8 +22,14 @@ namespace EpamTask03.ClassesOfShapes
         /// <summary>
         /// Constructor witho two parameters
         /// </summary>
-
         public FilmParallelogram(double leftAndRightSide,double bottomAndTopSide) : base(leftAndRightSide,bottomAndTopSide)
+        {
+        }
+
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
+        public FilmParallelogram(double leftAndRightSide, double bottomAndTopSide, double angleInDegrees) : base(leftAndRightSide, bottomAndTopSide, angleInDegrees)
         {
         }
 

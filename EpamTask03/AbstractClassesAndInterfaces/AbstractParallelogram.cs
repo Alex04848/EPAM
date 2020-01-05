@@ -96,6 +96,17 @@ namespace EpamTask03.AbstractClassesAndInterfaces
         /// <summary>
         /// Constructor with three parameters
         /// </summary>
+        /// <param name="leftAndRightSide"></param>
+        /// <param name="bottomAndTopSide"></param>
+        /// <param name="angleInDegrees"></param>
+        public AbstractParallelogram(double leftAndRightSide,double bottomAndTopSide, double angleInDegrees) : this(leftAndRightSide,bottomAndTopSide)
+        {
+            Angle = (angleInDegrees / 57);
+        }
+
+        /// <summary>
+        /// Constructor with three parameters
+        /// </summary>
         /// <param name="radius"></param>
         public AbstractParallelogram(double leftAndRightSide,double bottomAndTopSide,AbstractShape shape) : this(leftAndRightSide, bottomAndTopSide)
         {

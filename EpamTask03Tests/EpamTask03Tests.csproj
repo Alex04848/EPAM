@@ -63,6 +63,7 @@
     <Compile Include="AbstractClassesAndInterfaces\AbstractRhombusTests.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractSquareTests.cs" />
     <Compile Include="AbstractClassesAndInterfaces\AbstractTriangleTests.cs" />
+    <Compile Include="HelpClasses\ReflectionShapeParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

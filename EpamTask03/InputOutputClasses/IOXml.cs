@@ -95,7 +95,7 @@ namespace EpamTask03.InputOutputClasses
                 
                 while (xmlReader.Read())                
                     if (xmlReader.NodeType == XmlNodeType.Element && xmlReader.HasAttributes)
-                        shapes.Add(ShapeParser.Parse(xmlReader.GetAttribute("Values")));
+                        shapes.Add(ReflectionShapeParser.Parse(xmlReader.GetAttribute("Values")));
 
                 
                 xmlReader.Close();

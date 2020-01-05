@@ -58,6 +58,14 @@ namespace EpamTask03.ClassesOfShapes
         }
 
         /// <summary>
+        /// Constructor with four parameters
+        /// </summary>
+        public PaperParallelogram(double leftAndRightSide, double bottomAndTopSide, double angleInDegrees, ConsoleColor color) : base(leftAndRightSide,bottomAndTopSide,angleInDegrees)
+        {
+            Color = color;
+        }
+
+        /// <summary>
         /// Constructor with three parameters
         /// </summary>
         public PaperParallelogram(double leftAndRightSide, double bottomAndTopSide, string color) : this(leftAndRightSide, bottomAndTopSide, ColorParser.Parse(color))

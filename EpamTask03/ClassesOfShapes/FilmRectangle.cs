@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using EpamTask03.AbstractClassesAndInterfaces;
 using EpamTask03.ExceptionClasses;
 
-namespace EpamTask03
+namespace EpamTask03.ClassesOfShapes
 {
     /// <summary>
     /// The rectangle from film material

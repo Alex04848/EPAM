@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using EpamTask03.AbstractClassesAndInterfaces;
 using EpamTask03.ExceptionClasses;
 
-namespace EpamTask03
+namespace EpamTask03.ClassesOfShapes
 {
     /// <summary>
     /// The class describes paper rectangle shape,
     /// The class inherits from AbstractRectangle 
     /// class and implements IColor inteface
     /// </summary>
-    class PaperRectangle : AbstractRectangle, IColor
+    public class PaperRectangle : AbstractRectangle, IColor
     {
         public ConsoleColor Color
         {

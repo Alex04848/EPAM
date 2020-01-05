@@ -73,7 +73,7 @@ namespace EpamTask03.InputOutputClasses
                 {
                     string currentValue = stream.ReadLine();
                     if (regex.IsMatch(currentValue) && currentValue.Contains("Values"))
-                        shapes.Add(ShapeParser.Parse(regex.Match(currentValue).Value));
+                        shapes.Add(ReflectionShapeParser.Parse(regex.Match(currentValue).Value));
 
                 }
 
