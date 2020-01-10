@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EpamTask05.ExceptionClasses;
 
-namespace EpamTask05
+namespace EpamTask05.GradeOfTestClasses
 {
     /// <summary>
     /// The class which represents grade of a test
@@ -36,7 +36,7 @@ namespace EpamTask05
         /// <summary>
         /// The subject of a test
         /// </summary>
-        public string Subject { get; set; }
+        public string Subject { get; protected set; }
 
         /// <summary>
         /// The date
@@ -46,15 +46,14 @@ namespace EpamTask05
         int grade;
 
 
-        public GradeOfTest(string fullName,int grade,string subject,DateTime date)
+        public GradeOfTest(string fullName,int grade,DateTime date)
         {
             this.FullName = fullName;
             this.Grade = grade;
-            this.Subject = subject;
             this.Date = date;
         }
 
-        public GradeOfTest() : this(string.Empty, default, string.Empty, default)
+        public GradeOfTest() : this(string.Empty, default, default)
         {
         }
 
@@ -75,7 +74,7 @@ namespace EpamTask05
         /// <param name="treeNodeSecond"></param>
         /// <returns></returns>
         public override bool Equals(object obj)
-                => (obj is GradeOfTest gradeOfTest && this.GetHashCode() == gradeOfTest.GetHashCode());
+                => (obj is GradeOfTest gradeOfTest && gradeOfTest.GetType() == this.GetType() && this.GetHashCode() == gradeOfTest.GetHashCode());
 
         /// <summary>
         /// Overrided method ToString

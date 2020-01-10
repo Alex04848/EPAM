@@ -1,4 +1,5 @@
 ﻿using EpamTask05.ExceptionClasses;
+using EpamTask05.GradeOfTestClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace EpamTask05.ClassesOfDataStructure
     /// <typeparam name="T"></typeparam>
     [Serializable]
     public class TreeNode<T> where T : new()
-    {
+    { 
         /// <summary>
         /// Value of the node
         /// </summary>
@@ -24,11 +25,11 @@ namespace EpamTask05.ClassesOfDataStructure
         /// Left Pointer
         /// </summary>
         public TreeNode<T> Left { get; set; }
+
         /// <summary>
         /// Right Pointer
         /// </summary>
         public TreeNode<T> Right { get; set; }
-
 
         public TreeNode(T value)
         {
@@ -42,7 +43,6 @@ namespace EpamTask05.ClassesOfDataStructure
         public TreeNode() : this(new T())
         {
         }
-
 
         /// <summary>
         /// Overloaded Operation for compare

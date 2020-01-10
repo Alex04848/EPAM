@@ -46,16 +46,21 @@
     <Compile Include="ClassesOfDataStructure\TreeBalance.cs" />
     <Compile Include="ClassesOfDataStructure\TreeDeleteNodes.cs" />
     <Compile Include="ClassesOfDataStructure\TreeFindAndContains.cs" />
-    <Compile Include="ClassesOfDataStructure\TreeOfGradesOfTestsPrinter.cs" />
+    <Compile Include="TreeConsolePrinters\TreeOfGradesOfTestsPrinter.cs" />
     <Compile Include="ExceptionClasses\GradeException.cs" />
     <Compile Include="ExceptionClasses\TreeException.cs" />
     <Compile Include="ExceptionClasses\TreeNodeException.cs" />
-    <Compile Include="GradeOfTest.cs" />
+    <Compile Include="GradeOfTestClasses\EnglishLanguageTest.cs" />
+    <Compile Include="GradeOfTestClasses\GeographyTest.cs" />
+    <Compile Include="GradeOfTestClasses\GradeOfTest.cs" />
+    <Compile Include="GradeOfTestClasses\MathTest.cs" />
+    <Compile Include="GradeOfTestClasses\PhysicsTest.cs" />
+    <Compile Include="GradeOfTestClasses\RussianLanguageTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClassesOfDataStructure\Tree.cs" />
     <Compile Include="ClassesOfDataStructure\TreeNode.cs" />
-    <Compile Include="ClassesOfDataStructure\TreePrinter.cs" />
+    <Compile Include="TreeConsolePrinters\TreePrinter.cs" />
     <Compile Include="SerializationToXML\TreeSerializer.cs" />
   </ItemGroup>
   <ItemGroup>

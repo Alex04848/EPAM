@@ -17,7 +17,7 @@ namespace EpamTask05.ClassesOfDataStructure
         /// </summary>
         /// <param name="treeNode"></param>
         /// <returns></returns>
-        public int GetHeight(TreeNode<T> treeNode)
+        int GetHeight(TreeNode<T> treeNode)
         {
             int maxHeight = default;
 
@@ -95,7 +95,7 @@ namespace EpamTask05.ClassesOfDataStructure
         /// </summary>
         /// <param name="treeNode"></param>
         /// <returns></returns>
-        public TreeNode<T> Balance(TreeNode<T> treeNode)
+        TreeNode<T> Balance(TreeNode<T> treeNode)
         {
             if(BFactor(treeNode) == 2)
             {

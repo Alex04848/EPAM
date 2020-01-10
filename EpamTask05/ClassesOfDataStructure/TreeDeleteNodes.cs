@@ -41,7 +41,11 @@ namespace EpamTask05.ClassesOfDataStructure
                 else if (nodeForRemove < startNode)
                     DeleteNode(startNode.Left, nodeForRemove);
                 else if (nodeForRemove.Equals(startNode))
+                {
                     RemoveFromNodeOperation(startNode);
+                    Root = Balance(Root);
+                }
+
             }
         }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EpamTask05.GradeOfTestClasses;
 
 namespace EpamTask05.ClassesOfDataStructure
 {
@@ -33,7 +34,6 @@ namespace EpamTask05.ClassesOfDataStructure
         public Tree() : this(new T())
         {
         }
-
 
         /// <summary>
         /// AddNode Method
@@ -107,7 +107,6 @@ namespace EpamTask05.ClassesOfDataStructure
         /// <returns></returns>
         TreeNode<T> GetMinNode(TreeNode<T> startNode)
            => ((startNode.Left == null) ? startNode : GetMinNode(startNode.Left));
-
 
         /// <summary>
         /// The Method Which print tree!!! But the method print tree by other method of an interface.

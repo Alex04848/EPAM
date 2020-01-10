@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EpamTask05.GradeOfTestClasses;
+using EpamTask05.ClassesOfDataStructure;
 
-namespace EpamTask05.ClassesOfDataStructure
+namespace EpamTask05.TreeConsolePrinters
 {
     /// <summary>
     /// The class of printer for tree with grades

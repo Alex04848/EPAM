@@ -49,11 +49,8 @@ namespace EpamTask05.Tests
             Tree<Int32> tree = (new TreeSerializer<Int32>()).DeserializeFromXmlFile(path);
 
             //act
-            bool result = true;
-            arr.ToList().ForEach(value =>
-            {
-                result = result && tree.Contains(value);
-            });
+            bool result;
+            result = arr.ToList().All(value => tree.Contains(value));
 
 
             //assert

@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using EpamTask05.ExceptionClasses;
 using EpamTask05.ClassesOfDataStructure;
+using EpamTask05.GradeOfTestClasses;
+using System.IO;
 
 namespace EpamTask05.Tests
 {
@@ -168,6 +170,33 @@ namespace EpamTask05.Tests
 
             //assert
             Assert.IsTrue(result == arr.Min());
+        }
+
+        /// <summary>
+        /// Test for Tree With Grades
+        /// </summary>
+        [DataTestMethod()]
+        public void TreeWithGradesTest()
+        {
+            //arrange
+            List<GradeOfTest> gradesOfTests = new List<GradeOfTest>()
+            {
+                new MathTest("Alex",8,new DateTime(2019,12,24)),
+                new RussianLanguageTest("Paul",6,new DateTime(2019,12,4)),
+                new PhysicsTest("Lesha",7 ,new DateTime(2019,12,4)),
+                new EnglishLanguageTest("Paul",10,new DateTime(2019,5,19)),
+                new GeographyTest("Alex",8, new DateTime(2019,12,28))
+            };
+
+            Tree<GradeOfTest> treeWithGrades = new Tree<GradeOfTest>(gradesOfTests.First());
+
+            gradesOfTests.Skip(1).ToList().ForEach(grade => treeWithGrades.AddNode(grade));
+
+            //act
+            bool result = treeWithGrades != null && gradesOfTests.All(grade => treeWithGrades.Contains(grade));
+
+            //assert
+            Assert.IsTrue(result);
         }
 
     }
