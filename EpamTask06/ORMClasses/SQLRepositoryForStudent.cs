@@ -30,7 +30,7 @@ namespace EpamTask06.ORMClasses
 
         SQLRepositoryForStudent()
         {
-            connection = new SqlConnection();
+            connection = new SqlConnection(SQLWorker.connectionString);
             command = new SqlCommand();
             command.Connection = connection;
         }
@@ -44,7 +44,7 @@ namespace EpamTask06.ORMClasses
 
             SQLWorker.SimpleQuery($"INSERT INTO [Student]" +
                 $" VALUES (N'{obj.FullName}','{obj.DateOfBirth.ToString("yyyy-MM-dd")}'," +
-                $"{SQLWorker.GetID(obj.StudentGroup)},{obj.Gender})");
+                $"{SQLWorker.GetID(obj.StudentGroup)},{(int)obj.Gender})");
         }
 
         public void Delete(int id)
@@ -65,7 +65,7 @@ namespace EpamTask06.ORMClasses
             Student student = null;
             connection.Open();
 
-            command.CommandText = "SELECT * FROM [Student]";
+            command.CommandText = $"SELECT * FROM [Student] WHERE [ID] = {id}";
             reader = command.ExecuteReader();
 
             if(reader.Read())
@@ -87,7 +87,9 @@ namespace EpamTask06.ORMClasses
 
             SQLWorker.SimpleQuery($"UPDATE [Student] SET" +
                 $" [FullName] = N'{obj.FullName}',[DateOfBirth] = '{obj.DateOfBirth.ToString("yyyy-MM-dd")}'," +
-                $" [GroupID] = {SQLWorker.GetID(obj.StudentGroup)}, [Gender] = {obj.Gender}");
+                $" [GroupID] = {SQLWorker.GetID(obj.StudentGroup)}, [Gender] = {(int)obj.Gender}" +
+                $" WHERE [ID] = {obj.Id}");
         }
+
     }
 }

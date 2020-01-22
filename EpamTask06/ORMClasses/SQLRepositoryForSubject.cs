@@ -74,6 +74,8 @@ namespace EpamTask06.ORMClasses
 
         public void Update(Subject obj)
             => SQLWorker.SimpleQuery($"UPDATE [Subject] SET [NameOfSubject] = N'{obj.NameOfSubject}'," +
-                $"[CountOfLections] = {obj.CountOfLections}, [CountOfPractice] = {obj.CountOfPractice}");
+                $"[CountOfLections] = {obj.CountOfLections}, [CountOfPractice] = {obj.CountOfPractice} " +
+                $"WHERE [ID] = {obj.Id}");
+
     }
 }

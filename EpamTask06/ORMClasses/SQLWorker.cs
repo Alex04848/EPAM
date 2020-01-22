@@ -90,7 +90,7 @@ namespace EpamTask06.ORMClasses
         public static int GetID(Speciality speciality)
           => GetID($"SELECT [ID] FROM [Speciality]" +
                 $" WHERE [AbreviationOfSpeciality] = N'{speciality.AbreviationOfSpeciality}' AND " +
-                $"[FullNameOfSpeciality] = {speciality.NameOfSpeciality}");
+                $"[FullNameOfSpeciality] = N'{speciality.NameOfSpeciality}'");
 
         public static int GetID(Group group)
         {
@@ -109,7 +109,7 @@ namespace EpamTask06.ORMClasses
             return GetID($"SELECT [ID] FROM [Student] WHERE [FullName] = N'{student.FullName}' AND " +
                 $"[DateOfBirth] = '{student.DateOfBirth.ToString("yyyy-MM-dd")}' AND " +
                 $"[GroupID] = {idValue} AND" +
-                $"[Gender] = {student.Gender}");
+                $"[Gender] = {(int)student.Gender}");
         }
 
         public static int GetID(StudentsGrade studentsGrade)
@@ -134,8 +134,8 @@ namespace EpamTask06.ORMClasses
             return GetID($"SELECT [ID] FROM [ExaminationEvent] WHERE " +
                 $"[SubjectID] = {idValueForSubject} AND " +
                 $"[GroupID] = {idValueForGroup} AND " +
-                $"[DateOfExam] = '{examEvent.Date.ToString("yyyy-MM-dd")}'" +
-                $"[TypeOfEvent] = {examEvent.EventType} AND " +
+                $"[DateOfExam] = '{examEvent.Date.ToString("yyyy-MM-dd")}' AND " +
+                $"[TypeOfEvent] = {(int)examEvent.EventType} AND " +
                 $"[SessionID] = {idValueForSession}");
         }
 

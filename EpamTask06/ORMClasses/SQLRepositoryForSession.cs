@@ -38,7 +38,7 @@ namespace EpamTask06.ORMClasses
 
         public void Create(Session obj)
             => SQLWorker.SimpleQuery($"INSERT INTO [Session] VALUES" +
-                $" ({obj.NameOfSession},'{obj.StartDate.ToString("yyyy-MM-dd")}','{obj.EndDate.ToString("yyyy-MM-dd")}')");
+                $" (N'{obj.NameOfSession}','{obj.StartDate.ToString("yyyy-MM-dd")}','{obj.EndDate.ToString("yyyy-MM-dd")}')");
 
         public void Delete(int id)
             => SQLWorker.SimpleQuery($"DELETE FROM [Session] WHERE [ID] = {id}");
@@ -75,7 +75,10 @@ namespace EpamTask06.ORMClasses
 
         public void Update(Session obj)
             => SQLWorker.SimpleQuery($"UPDATE [Session] SET " +
-                $"[NameOfSession] = {obj.NameOfSession},[StartDate] = '{obj.StartDate.ToString("yyyy-MM-dd")}'," +
-                $"[EndDate] = '{obj.EndDate.ToString("yyyy-MM-dd")}'");
+                $"[NameOfSession] = N'{obj.NameOfSession}'," +
+                $"[StartDate] = '{obj.StartDate.ToString("yyyy-MM-dd")}'," +
+                $"[EndDate] = '{obj.EndDate.ToString("yyyy-MM-dd")}'" +
+                $" WHERE [ID] = {obj.Id}");
+
     }
 }

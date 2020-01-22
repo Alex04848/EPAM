@@ -40,7 +40,7 @@ namespace EpamTask06.ORMClasses
 
         public void Create(Group obj)
         {
-            if(SQLWorker.CheckExistance(obj.SpecialityOfGroup))
+            if(!SQLWorker.CheckExistance(obj.SpecialityOfGroup))
                 throw new DBException("Incorrect speciality!!!");
 
 
@@ -66,12 +66,14 @@ namespace EpamTask06.ORMClasses
             Group group = null;
 
             connection.Open();
-            command.CommandText = "SELECT * FROM [Group]";
+            command.CommandText = $"SELECT * FROM [Group] WHERE [ID] = {id}";
             reader = command.ExecuteReader();
 
-            if(reader.Read())
+            if (reader.Read())
+            {
                 group = new Group(reader.GetInt32(1), reader.GetInt32(2), repositoryOfSpecialities.Read(reader.GetInt32(3)));
-            
+                group.Id = reader.GetInt32(0);
+            }
 
             connection.Close();
 
@@ -82,14 +84,16 @@ namespace EpamTask06.ORMClasses
 
         public void Update(Group obj)
         {
-            if (SQLWorker.CheckExistance(obj.SpecialityOfGroup))
+            if (!SQLWorker.CheckExistance(obj.SpecialityOfGroup))
                 throw new DBException("Incorrect speciality!!!");
 
 
             SQLWorker.SimpleQuery($"UPDATE [Group] SET " +
-                $"[NumOfCourse] = {obj.NumOfCourse},[NumOfGroup] = {obj.NumOfGroup},[GroupID] = {SQLWorker.GetID(obj.SpecialityOfGroup)}");
+                $"[NumOfCourse] = {obj.NumOfCourse}," +
+                $"[NumOfGroup] = {obj.NumOfGroup}," +
+                $"[SpecialityID] = {SQLWorker.GetID(obj.SpecialityOfGroup)}" +
+                $"WHERE [ID] = {obj.Id}");
         }
-
 
     }
 }

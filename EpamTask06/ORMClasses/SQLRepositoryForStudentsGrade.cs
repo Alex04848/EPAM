@@ -37,7 +37,7 @@ namespace EpamTask06.ORMClasses
 
         SQLRepositoryForStudentsGrade()
         {
-            connection = new SqlConnection();
+            connection = new SqlConnection(SQLWorker.connectionString);
             command = new SqlCommand();
             command.Connection = connection;
         }
@@ -99,7 +99,8 @@ namespace EpamTask06.ORMClasses
                 $"[StudentID] = {SQLWorker.GetID(obj.Student)}," +
                 $"[SubjectID] = {SQLWorker.GetID(obj.Subject)}," +
                 $"[Grade] = {obj.Grade}," +
-                $"[SessionID] = {SQLWorker.GetID(obj.Session)}");
+                $"[SessionID] = {SQLWorker.GetID(obj.Session)} " +
+                $" WHERE [ID] = {obj.Id}");
         }
        
     }

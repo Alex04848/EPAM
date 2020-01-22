@@ -74,7 +74,9 @@ namespace EpamTask06.ORMClasses
 
         public void Update(Speciality obj)
             => SQLWorker.SimpleQuery($"UPDATE [Speciality] " +
-                $"SET [AbreviationOfSpeciality] = N'{obj.AbreviationOfSpeciality}',[FullNameOfSpeciality] = N'{obj.NameOfSpeciality}' " +
+                $"SET " +
+                $"[AbreviationOfSpeciality] = N'{obj.AbreviationOfSpeciality}'," +
+                $"[FullNameOfSpeciality] = N'{obj.NameOfSpeciality}' " +
                 $"WHERE [ID] = {obj.Id}");
 
     }

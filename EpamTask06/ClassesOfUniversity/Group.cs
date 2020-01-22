@@ -73,7 +73,7 @@ namespace EpamTask06.ClassesOfUniversity
                 => (obj is Group group && group.GetHashCode() == this.GetHashCode());
 
         public override string ToString()
-               => ($"{SpecialityOfGroup}-{NumOfCourse}{numOfGroup}"); 
+               => ($"{SpecialityOfGroup.AbreviationOfSpeciality}-{NumOfCourse}{numOfGroup}"); 
 
     }
 }

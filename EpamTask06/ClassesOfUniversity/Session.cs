@@ -20,7 +20,7 @@ namespace EpamTask06.ClassesOfUniversity
 
             set
             {
-                if (value > endDate)
+                if (value >= endDate)
                     throw new SessionException("Incorrect start date!!!");
 
                 startDate = value;
@@ -33,22 +33,22 @@ namespace EpamTask06.ClassesOfUniversity
 
             set
             {
-                if (value < startDate)
+                if (value <= startDate)
                     throw new SessionException("Incorrect end date!!!");
 
                 endDate = value;
             }
         }
 
-        DateTime startDate;
+        DateTime startDate = DateTime.MinValue;
 
-        DateTime endDate;
+        DateTime endDate = DateTime.MaxValue;
 
         public TimeSpan GetTimeOfSession => (EndDate - StartDate);
 
 
 
-        public Session() : this(string.Empty,DateTime.Now,DateTime.Now)
+        public Session() : this(string.Empty,DateTime.MinValue,DateTime.MaxValue)
         {
         }
 

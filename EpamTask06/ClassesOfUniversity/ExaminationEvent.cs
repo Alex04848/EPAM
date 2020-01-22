@@ -66,6 +66,7 @@ namespace EpamTask06.ClassesOfUniversity
         {
             this.Subject = subject;
             this.Group = group;
+            this.Date = date;
             this.EventType = eventType;
             this.Session = session;
         }

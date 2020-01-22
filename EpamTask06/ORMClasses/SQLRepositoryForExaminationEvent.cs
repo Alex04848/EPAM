@@ -36,7 +36,7 @@ namespace EpamTask06.ORMClasses
 
         SQLRepositoryForExaminationEvent()
         {
-            connection = new SqlConnection();
+            connection = new SqlConnection(SQLWorker.connectionString);
             command = new SqlCommand();
             command.Connection = connection;
         }
@@ -49,8 +49,8 @@ namespace EpamTask06.ORMClasses
 
             SQLWorker.SimpleQuery($"INSERT INTO [ExaminationEvent] VALUES ({SQLWorker.GetID(obj.Subject)}," +
                 $"{SQLWorker.GetID(obj.Group)}," +
-                $"{obj.Date.ToString("yyyy-MM-dd")}," +
-                $"{obj.EventType}," +
+                $"'{obj.Date.ToString("yyyy-MM-dd")}'," +
+                $"{(int)obj.EventType}," +
                 $"{SQLWorker.GetID(obj.Session)})");
         }
 
@@ -98,9 +98,10 @@ namespace EpamTask06.ORMClasses
 
             SQLWorker.SimpleQuery($"UPDATE [ExaminationEvent] SET [SubjectID] = {SQLWorker.GetID(obj.Subject)}," +
                 $"[GroupID] = {SQLWorker.GetID(obj.Group)}," +
-                $"[DateOfExam] = {obj.Date.ToString("yyyy-MM-dd")}," +
-                $"[TypeOfEvent] = {obj.EventType}," +
-                $"[SessionID] = {SQLWorker.GetID(obj.Session)}");
+                $"[DateOfExam] = '{obj.Date.ToString("yyyy-MM-dd")}'," +
+                $"[TypeOfEvent] = {(int)obj.EventType}," +
+                $"[SessionID] = {SQLWorker.GetID(obj.Session)}" +
+                $"WHERE [ID] = {obj.Id}");
         }
     }
 }
