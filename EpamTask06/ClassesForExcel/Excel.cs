@@ -17,6 +17,13 @@ namespace EpamTask06.ClassesForExcel
         static _Excel.Worksheet wSheet = wBook.ActiveSheet;
 
 
+
+        public static void GetWb()
+            => wBook = app.Workbooks.Add(Missing.Value);
+
+        public static void GetSheet()
+            => wSheet = wBook.ActiveSheet;
+
         public static void Write(int i,int j,string value)
                 => wSheet.Cells[i + 1, j + 1] = value;
 

@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using EpamTask06.ClassesOfUniversity;
 using EpamTask06.ORMClasses;
+using EpamTask06.DataAnalysisClasses;
+using EpamTask06.DBAccess;
+using static EpamTask06.DBAccess.DBAccessObject;
+using EpamTask06.ClassesForExcel;
 
 namespace EpamTask06
 {
@@ -12,24 +16,25 @@ namespace EpamTask06
     {
         static void Main(string[] args)
         {
-            //IRepository<Subject> repository = SQLRepositoryForSubject.Repository;
+        
+            //DataAnalysis dataAnalysis = new DataAnalysis(Subjects.GetCollection(),
+            //                                             Sessions.GetCollection(),
+            //                                             Specialities.GetCollection(),
+            //                                             Groups.GetCollection(),
+            //                                             Students.GetCollection(),
+            //                                             ExaminationEvents.GetCollection(),
+            //                                             StudentsGrades.GetCollection());
 
-            //var subjects = repository.GetCollection().ToList();
+            //Group group = Groups.Read(1);
+            //Session session = Sessions.Read(1);
 
-            //subjects.ForEach(Console.WriteLine);
 
-            //IRepository<Speciality> repository = SQLRepositoryForSpeciality.Repository;
+            //var resultsList = dataAnalysis.GetResultsOfSession(session, group).ToList();
 
-            //var specialities = repository.GetCollection().ToList();
+            //resultsList.ForEach(Console.WriteLine);
 
-            //specialities.ForEach(Console.WriteLine);
 
-            IRepository<StudentsGrade> repository = SQLRepositoryForStudentsGrade.Repository;
-
-            var grades = repository.GetCollection().ToList();
-
-            grades.Where(t => t.Session.Id == 1 && t.Student.StudentGroup.Id == 1).ToList().ForEach(Console.WriteLine);
-
+            ExcelWriter.WriteResults();
 
 
 
