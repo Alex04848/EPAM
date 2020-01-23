@@ -99,6 +99,5 @@ namespace EpamTask06.DataAnalysisClasses
         public IEnumerable<SessionResults> GetStudentsForExpellingOrderedByGrades(Session session, Group group, double minimalAverageGrade = 5.5)
                 => GetStudentsForExpelling(session, group, minimalAverageGrade).OrderByDescending(res => res.AverageGrade);
 
-
     }
 }
