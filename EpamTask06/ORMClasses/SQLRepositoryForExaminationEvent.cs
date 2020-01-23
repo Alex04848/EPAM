@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Repository for ExaminationEvent Table
+    /// </summary>
     public class SQLRepositoryForExaminationEvent : IRepository<ExaminationEvent>
     {
         //--------------------------Singleton-----------------------
@@ -40,7 +43,6 @@ namespace EpamTask06.ORMClasses
             command = new SqlCommand();
             command.Connection = connection;
         }
-
 
 
         public void Create(ExaminationEvent obj)

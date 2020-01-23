@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Repository for StudentsGrade Table
+    /// </summary>
     public class SQLRepositoryForStudentsGrade : IRepository<StudentsGrade>
     { 
         

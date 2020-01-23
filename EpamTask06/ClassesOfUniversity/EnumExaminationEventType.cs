@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    /// <summary>
+    /// Type of Examination event, it can be:
+    /// 1) Exam (экзамен)
+    /// 2) Credit (зачёт)
+    /// </summary>
     public enum ExaminationEventType : Int32
     {
         Exam,

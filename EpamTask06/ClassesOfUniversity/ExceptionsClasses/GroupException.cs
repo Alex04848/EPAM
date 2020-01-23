@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity.ExceptionsClasses
 {
+    /// <summary>
+    /// Exception For Group class
+    /// </summary>
     public class GroupException : UniversityException
     {
         public GroupException() : base()

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.DataAnalysisClasses.ExceptionClasses
 {
+    /// <summary>
+    /// Exception For DataAnalysis class
+    /// </summary>
     public class DataAnalysisException : Exception
     {
         public DataAnalysisException() : base()

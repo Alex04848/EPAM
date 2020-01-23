@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// The class which helps other classes with simple SQL queries
+    /// and this class just has important functionality for other ORM classes
+    /// </summary>
     public static class SQLWorker 
     {
         static SqlConnection connection;
@@ -16,6 +20,9 @@ namespace EpamTask06.ORMClasses
 
         static SqlDataReader reader;
 
+        /// <summary>
+        /// Static Ctor which initializes connection and command
+        /// </summary>
         static SQLWorker()
         {
             connection = new SqlConnection(connectionString);
@@ -23,7 +30,10 @@ namespace EpamTask06.ORMClasses
             command.Connection = connection;
         }
 
-
+        /// <summary>
+        /// String for Connection to DataBase
+        /// </summary>
+       
         public const string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=University;Integrated Security=True;" +
             @"Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 

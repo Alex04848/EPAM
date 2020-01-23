@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity.ExceptionsClasses
 {
+    /// <summary>
+    /// Exception For ExaminationEvent class
+    /// </summary>
     public class ExaminationEventException : UniversityException
     {
         public ExaminationEventException() : base()

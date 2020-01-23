@@ -9,6 +9,9 @@ using System.IO;
 
 namespace EpamTask06.ClassesForExcel.Tests
 {
+    /// <summary>
+    /// The class which tests how ExcelWriter static class writes data to excel files
+    /// </summary>
     [TestClass()]
     public class ExcelWriterTests
     {

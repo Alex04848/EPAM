@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Repository for Group Table
+    /// </summary>
     public class SQLRepositoryForGroup : IRepository<Group>
     {
         //--------------------------Singleton-----------------------

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Repository for Student Table
+    /// </summary>
     public class SQLRepositoryForStudent : IRepository<Student>
     {
         //--------------------------Singleton------------------------
@@ -27,6 +30,7 @@ namespace EpamTask06.ORMClasses
         SqlDataReader reader;
 
         IRepository<Group> repositoryOfGroups = SQLRepositoryForGroup.Repository;
+
 
         SQLRepositoryForStudent()
         {

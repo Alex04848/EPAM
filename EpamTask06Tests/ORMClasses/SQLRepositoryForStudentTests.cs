@@ -9,6 +9,9 @@ using EpamTask06.ClassesOfUniversity;
 
 namespace EpamTask06.ORMClasses.Tests
 {
+    /// <summary>
+    /// The Class which test CRUD of ORM class for Student
+    /// </summary>
     [TestClass()]
     public class SQLRepositoryForStudentTests
     {

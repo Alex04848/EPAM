@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.DBAccess
 {
+    /// <summary>
+    /// Static Class for Access to DB
+    /// </summary>
     public static class DBAccessObject
     {
         public static IRepository<Student> Students { get; private set; } = SQLRepositoryForStudent.Repository;

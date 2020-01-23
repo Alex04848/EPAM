@@ -7,11 +7,19 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    /// <summary>
+    /// Class That describes Students Grade table in database
+    /// </summary>
     public class StudentsGrade
     {
+        /// <summary>
+        /// Int property for Id from DB
+        /// </summary>
         public int Id { get; set; }
 
-
+        /// <summary>
+        /// Grade
+        /// </summary>
         public int Grade
         {
             get => grade;
@@ -25,6 +33,9 @@ namespace EpamTask06.ClassesOfUniversity
             }
         }
 
+        /// <summary>
+        /// Student
+        /// </summary>
         public Student Student
         {
             get => student;
@@ -32,6 +43,9 @@ namespace EpamTask06.ClassesOfUniversity
             set => student = value ?? throw new GradeException("Incorrect student's value!!!");   
         }
 
+        /// <summary>
+        /// Subject
+        /// </summary>
         public Subject Subject
         {
             get => subject;
@@ -39,6 +53,9 @@ namespace EpamTask06.ClassesOfUniversity
             set => subject = value ?? throw new GradeException("Incorrect subject's value!!!");
         }
 
+        /// <summary>
+        /// Session
+        /// </summary>
         public Session Session
         {
             get => session;
@@ -69,13 +86,25 @@ namespace EpamTask06.ClassesOfUniversity
         }
 
 
-
+        /// <summary>
+        /// Overrided method GetHashCode which gets hash codes from all fields
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
             => (grade.GetHashCode() + student.GetHashCode() + subject.GetHashCode());
 
+        /// <summary>
+        /// Overrided method Equals which checks Equality of object obj and current object 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
               => (obj is StudentsGrade studentsGrade && studentsGrade.GetHashCode() == this.GetHashCode());
 
+        /// <summary>
+        /// Overrided ToString method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
               => ($"{Student.FullName};{Subject.NameOfSubject};{Grade};{Session.NameOfSession}");
 

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Repository for Session Table
+    /// </summary>
     public class SQLRepositoryForSession : IRepository<Session>
     {
 

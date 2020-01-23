@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    /// <summary>
+    /// This class is for getting Results from LINQ-to-Objects Query.
+    /// The class descibes results of session.
+    /// </summary>
     public class SessionResults
     {
+        /// <summary>
+        /// Student
+        /// </summary>
         public Student Student {
 
             get => student;
@@ -17,6 +24,9 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        /// <summary>
+        /// Session
+        /// </summary>
         public Session Session {
 
             get => session;
@@ -25,6 +35,9 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        /// <summary>
+        /// Average Grade
+        /// </summary>
         public double AverageGrade {
 
             get => averageGrade;
@@ -57,12 +70,25 @@ namespace EpamTask06.ClassesOfUniversity
         }
 
 
+        /// <summary>
+        /// Overrided method GetHashCode which gets hash codes from all fields
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
             => (student.GetHashCode() + session.GetHashCode() + averageGrade.GetHashCode());
 
+        /// <summary>
+        /// Overrided method Equals which checks Equality of object obj and current object 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
                 => (obj is SessionResults sessionResults && sessionResults.GetHashCode() == this.GetHashCode());
 
+        /// <summary>
+        /// Overrided ToString method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() 
             => ($"{session.NameOfSession};{student.FullName};{averageGrade}");
 

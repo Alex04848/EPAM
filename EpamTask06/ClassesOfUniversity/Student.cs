@@ -7,13 +7,24 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    /// <summary>
+    /// Class That describes Student table in database
+    /// </summary>
     public class Student
     {
+        /// <summary>
+        /// Int property for Id from DB
+        /// </summary>
         public int Id { get; set; }
 
-
+        /// <summary>
+        /// Full Name of Student
+        /// </summary>
         public string FullName { get; set; }
 
+        /// <summary>
+        /// Date Of Birth
+        /// </summary>
         public DateTime DateOfBirth {
 
             get => dateOfBirth;
@@ -28,6 +39,9 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        /// <summary>
+        /// Group of Student
+        /// </summary>
         public Group StudentGroup {
 
             get => group;
@@ -36,6 +50,9 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        /// <summary>
+        /// Gender
+        /// </summary>
         public Gender Gender
         {
             get => gender;
@@ -49,6 +66,9 @@ namespace EpamTask06.ClassesOfUniversity
             }
         }
 
+        /// <summary>
+        /// Property for getting age
+        /// </summary>
         public int GetAge => ((DateTime.Now - DateOfBirth).Days / 365);
 
 
@@ -73,12 +93,25 @@ namespace EpamTask06.ClassesOfUniversity
         }
 
 
+        /// <summary>
+        /// Overrided method GetHashCode which gets hash codes from all fields
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
                 => (FullName.GetHashCode() + DateOfBirth.GetHashCode() + StudentGroup.GetHashCode());
 
+        /// <summary>
+        /// Overrided method Equals which checks Equality of object obj and current object 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
                 => (obj is Student student && student.GetHashCode() == this.GetHashCode());
 
+        /// <summary>
+        /// Overrided ToString method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
                 => ($"{FullName};{DateOfBirth.ToString("dd/MM/yyyy")};{StudentGroup}");
 

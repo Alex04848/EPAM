@@ -8,14 +8,44 @@ using EpamTask06.DataAnalysisClasses.ExceptionClasses;
 
 namespace EpamTask06.DataAnalysisClasses
 {
+    /// <summary>
+    /// The Class which gets and analize data of University Classes
+    /// </summary>
     public class DataAnalysis
     {
+        /// <summary>
+        /// Subjects
+        /// </summary>
         public IEnumerable<Subject> Subjects { get; }
+
+        /// <summary>
+        /// Sessions
+        /// </summary>
         public IEnumerable<Session> Sessions { get; }
+
+        /// <summary>
+        /// Specialities
+        /// </summary>
         public IEnumerable<Speciality> Specialities { get; }
+
+        /// <summary>
+        /// Groups
+        /// </summary>
         public IEnumerable<Group> Groups { get; }
+
+        /// <summary>
+        /// Students
+        /// </summary>
         public IEnumerable<Student> Students { get; }
+
+        /// <summary>
+        /// ExaminationEvents
+        /// </summary>
         public IEnumerable<ExaminationEvent> ExaminationEvents { get; }
+
+        /// <summary>
+        /// StudentsGrades
+        /// </summary>
         public IEnumerable<StudentsGrade> StudentsGrades { get; }
 
 
@@ -37,7 +67,9 @@ namespace EpamTask06.DataAnalysisClasses
         }
 
 
-
+        /// <summary>
+        /// Get Results For session and group
+        /// </summary>
         public IEnumerable<SessionResults> GetResultsOfSession(Session session,Group group)
         {
             IEnumerable<SessionResults> gradesOfSessionForAllStudents = null;
@@ -56,7 +88,9 @@ namespace EpamTask06.DataAnalysisClasses
             return gradesOfSessionForAllStudents;
         }
 
-
+        /// <summary>
+        /// Get grades
+        /// </summary>
         IEnumerable<StudentsGrade> GetGrades(Session session, Group group)
         {
             DataAnalysisException.CheckGroup(group);
@@ -67,35 +101,79 @@ namespace EpamTask06.DataAnalysisClasses
                         .Where(grades => grades.Student.StudentGroup.Equals(group));
         }
 
-
+        /// <summary>
+        /// Get Minimal Grade for Session and Group
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public double GetMinimalGrade(Session session, Group group)
                 => GetGrades(session, group).Min(grade => grade.Grade);
-                
+
+        /// <summary>
+        /// Get Maximal Grade for Session and Group
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public double GetMaxGrade(Session session, Group group)
                 => GetGrades(session, group).Max(grade => grade.Grade);
 
+        /// <summary>
+        /// Get Average Grade for Session and Group
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public double GetAverageGrade(Session session, Group group)
                 => GetGrades(session, group).Average(grade => grade.Grade);
 
-
+        /// <summary>
+        /// Get Students for expelling
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public IEnumerable<SessionResults> GetStudentsForExpelling(Session session,Group group,double minimalAverageGrade = 5.5)
             => GetResultsOfSession(session, group)
                         .Where(result => result.AverageGrade < minimalAverageGrade);
 
 
 
-
+        /// <summary>
+        /// Get Results of Session ordered by students names
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public IEnumerable<SessionResults> GetResultsOfSessionOrderByStudentsName(Session session, Group group)
             => GetResultsOfSession(session, group).OrderByDescending(res => res.Student.FullName);
 
+        /// <summary>
+        /// Get Results of Session ordered by grades
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public IEnumerable<SessionResults> GetResultsOfSessionOrderByGrades(Session session, Group group)
            => GetResultsOfSession(session, group).OrderByDescending(res => res.AverageGrade);
 
 
-
+        /// <summary>
+        /// Get Students for expelling ordered by  students name
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public IEnumerable<SessionResults> GetStudentsForExpellingOrderedByStudentsName(Session session, Group group, double minimalAverageGrade = 5.5)
             => GetStudentsForExpelling(session, group, minimalAverageGrade).OrderByDescending(res => res.Student.FullName);
 
+        /// <summary>
+        /// Get Students for expelling ordered by grades
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public IEnumerable<SessionResults> GetStudentsForExpellingOrderedByGrades(Session session, Group group, double minimalAverageGrade = 5.5)
                 => GetStudentsForExpelling(session, group, minimalAverageGrade).OrderByDescending(res => res.AverageGrade);
 

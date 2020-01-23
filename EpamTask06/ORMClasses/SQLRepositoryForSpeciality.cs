@@ -27,7 +27,7 @@ namespace EpamTask06.ORMClasses
         SqlDataReader reader;
 
 
-        private SQLRepositoryForSpeciality()
+        SQLRepositoryForSpeciality()
         {
             connection = new SqlConnection(SQLWorker.connectionString);
             command = new SqlCommand();

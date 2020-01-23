@@ -7,13 +7,24 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    /// <summary>
+    /// Class That describes Session table in database
+    /// </summary>
     public class Session
     {
+        /// <summary>
+        /// Int property for Id from DB
+        /// </summary>
         public int Id { get; set; }
 
-
+        /// <summary>
+        /// Name Of Session
+        /// </summary>
         public string NameOfSession { get; set; }
 
+        /// <summary>
+        /// Session's start date
+        /// </summary>
         public DateTime StartDate
         {
             get => startDate;
@@ -27,6 +38,9 @@ namespace EpamTask06.ClassesOfUniversity
             }
         }
 
+        /// <summary>
+        /// Session's end date
+        /// </summary>
         public DateTime EndDate
         {
             get => endDate;
@@ -40,10 +54,14 @@ namespace EpamTask06.ClassesOfUniversity
             }
         }
 
+
         DateTime startDate = DateTime.MinValue;
 
         DateTime endDate = DateTime.MaxValue;
 
+        /// <summary>
+        /// All Time of Session
+        /// </summary>
         public TimeSpan GetTimeOfSession => (EndDate - StartDate);
 
 
@@ -61,13 +79,25 @@ namespace EpamTask06.ClassesOfUniversity
         }
 
 
-
+        /// <summary>
+        /// Overrided method GetHashCode which gets hash codes from all fields
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
                 => (NameOfSession.GetHashCode() + StartDate.GetHashCode() + EndDate.GetHashCode());
 
+        /// <summary>
+        /// Overrided method Equals which checks Equality of object obj and current object 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
                 => (obj is Session session && session.GetHashCode() == this.GetHashCode());
 
+        /// <summary>
+        /// Overrided ToString method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
                 => ($"{NameOfSession};{startDate.ToString("dd/MM/yyyy")};{endDate.ToString("dd/MM/yyyy")}");
 
