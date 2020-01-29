@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamTask07", "EpamTask07\EpamTask07.csproj", "{4D59522C-1C2C-49A1-9069-E22F5D47BEFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamTask06Updated", "EpamTask06Updated\EpamTask06Updated.csproj", "{AED2E545-9B1C-4D72-8DDE-09EC1921AA66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D59522C-1C2C-49A1-9069-E22F5D47BEFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D59522C-1C2C-49A1-9069-E22F5D47BEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D59522C-1C2C-49A1-9069-E22F5D47BEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D59522C-1C2C-49A1-9069-E22F5D47BEFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED2E545-9B1C-4D72-8DDE-09EC1921AA66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED2E545-9B1C-4D72-8DDE-09EC1921AA66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED2E545-9B1C-4D72-8DDE-09EC1921AA66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED2E545-9B1C-4D72-8DDE-09EC1921AA66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1824EBD-EA7C-4C6D-84A7-1721BFED155E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AED2E545-9B1C-4D72-8DDE-09EC1921AA66}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EpamTask06Updated</RootNamespace>
+    <AssemblyName>EpamTask06Updated</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassesForExcel\Excel.cs" />
+    <Compile Include="ClassesForExcel\ExcelWriter.cs" />
+    <Compile Include="ClassesOfUniversity\EnumExaminationEventType.cs" />
+    <Compile Include="ClassesOfUniversity\EnumGender.cs" />
+    <Compile Include="ClassesOfUniversity\ExaminationEvent.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\ExaminationEventException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\GradeException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\GroupException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\SessionException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\SessionResultsException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\SpecialityException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\StudentException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\SubjectException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\TeacherException.cs" />
+    <Compile Include="ClassesOfUniversity\ExceptionsClasses\UniversityException.cs" />
+    <Compile Include="ClassesOfUniversity\Group.cs" />
+    <Compile Include="ClassesOfUniversity\Person.cs" />
+    <Compile Include="ClassesOfUniversity\Session.cs" />
+    <Compile Include="ClassesOfUniversity\SessionResults.cs" />
+    <Compile Include="ClassesOfUniversity\Speciality.cs" />
+    <Compile Include="ClassesOfUniversity\Student.cs" />
+    <Compile Include="ClassesOfUniversity\StudentsGrade.cs" />
+    <Compile Include="ClassesOfUniversity\Subject.cs" />
+    <Compile Include="ClassesOfUniversity\Teacher.cs" />
+    <Compile Include="DataAnalysisClasses\DataAnalysis.cs" />
+    <Compile Include="DataAnalysisClasses\ExceptionClasses\DataAnalisysException.cs" />
+    <Compile Include="DBAccess\DBAccessObject.cs" />
+    <Compile Include="DBAccess\IRepository.cs" />
+    <Compile Include="ORMClasses\ExceptionClasses\DBException.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForGroup.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForExaminationEvent.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForSession.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForSpeciality.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForStudent.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForStudentsGrade.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForSubject.cs" />
+    <Compile Include="ORMClasses\SQLRepositoryForTeacher.cs" />
+    <Compile Include="ORMClasses\SQLWorker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

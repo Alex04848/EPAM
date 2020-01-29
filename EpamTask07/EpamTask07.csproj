@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D59522C-1C2C-49A1-9069-E22F5D47BEFB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EpamTask07</RootNamespace>
+    <AssemblyName>EpamTask07</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EpamTask06Updated">
+      <HintPath>..\EpamTask06Updated\bin\Debug\EpamTask06Updated.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLScripts\AddData\AddALLDataToDB.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddExaminationEvents.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddGroups.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddSessions.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddSpecialities.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddStudentsGrades.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddStudentsQuery.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddSubjects.sql" />
+    <Content Include="SQLScripts\AddData\DataForTables\AddTeachers.sql" />
+    <Content Include="SQLScripts\CreateDB\CreateDBQuery.sql" />
+    <Content Include="SQLScripts\CreateDB\TableCreationQuery.sql" />
+    <Content Include="SQLScripts\DeleteTables\DELETE_ALL_TABLES.sql" />
+    <Content Include="SQLScripts\ViewData\PrintExamSchedule.sql" />
+    <Content Include="SQLScripts\ViewData\StudentsOfFirstGroup.sql" />
+    <Content Include="SQLScripts\ViewData\ViewOfAllGroups.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
