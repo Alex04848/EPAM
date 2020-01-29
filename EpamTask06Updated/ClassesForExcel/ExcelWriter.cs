@@ -75,8 +75,6 @@ namespace EpamTask06.ClassesForExcel
         public static void WriteStudentsForExpellingOrderedByGrades()
               => WriteResults(WriteStudentsForExpellingOrderedByGrades);
 
-
-
         /// <summary>
         /// Common method for writing results
         /// </summary>

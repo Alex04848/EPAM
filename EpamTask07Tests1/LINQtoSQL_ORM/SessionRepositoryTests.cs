@@ -1,29 +1,30 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EpamTask06.ORMClasses;
+using EpamTask07.LINQtoSQL_ORM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask06.ClassesOfUniversity;
-using static EpamTask06.ORMClasses.SQLWorker;
+using EpamTask06;
+using static EpamTask07.LINQtoSQL_ORM.DBHelper;
 
-namespace EpamTask06.ORMClasses.Tests
+namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
     /// <summary>
     /// The Class which test CRUD of ORM class for Session
     /// </summary>
     [TestClass()]
-    public class SQLRepositoryForSessionTests
+    public class SessionRepositoryTests
     {
-        IRepository<Session> repository = SQLRepositoryForSession.Repository;
+        IRepository<Session> repository = SessionRepository.GetRepository;
 
-
+        
         [TestMethod()]
         public void CreateAndDeleteTest()
         {
             //arrange
-            Session session = new Session("TestValue", DateTime.MinValue, DateTime.MaxValue);
+            Session session = new Session("TestValue", DateTime.Now, DateTime.Now.AddDays(5));
             bool result;
 
             //act
@@ -54,7 +55,7 @@ namespace EpamTask06.ORMClasses.Tests
         {
             //arrange
             Session session = repository.Read(idValue);
-            
+
             //assert
             Assert.IsTrue(CheckExistance(session));
         }
@@ -63,7 +64,7 @@ namespace EpamTask06.ORMClasses.Tests
         public void CreateAndUpdateTest()
         {
             //arrange
-            Session session = new Session("TestValue", DateTime.MinValue, DateTime.MaxValue);
+            Session session = new Session("TestValue`1", DateTime.Now, DateTime.Now.AddDays(5));
             bool result;
 
             //act

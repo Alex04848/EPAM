@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LINQtoSQL_ORM\DBHelper.cs" />
+    <Compile Include="LINQtoSQL_ORM\ExaminationEventRepository.cs" />
+    <Compile Include="LINQtoSQL_ORM\GroupRepository.cs" />
+    <Compile Include="LINQtoSQL_ORM\SessionRepository.cs" />
+    <Compile Include="LINQtoSQL_ORM\SpecialityRepository.cs" />
+    <Compile Include="LINQtoSQL_ORM\StudentRepository.cs" />
+    <Compile Include="LINQtoSQL_ORM\SubjectRepository.cs" />
+    <Compile Include="LINQtoSQL_ORM\TeacherRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using EpamTask06.ClassesOfUniversity.ExceptionsClasses;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,7 @@ namespace EpamTask06.ClassesOfUniversity
 {
     public abstract class Person
     {
-        /// <summary>
-        /// Int property for Id from DB
-        /// </summary>
-        public int Id { get; set; }
-
-
+      
         /// <summary>
         /// Full Name of Student
         /// </summary>

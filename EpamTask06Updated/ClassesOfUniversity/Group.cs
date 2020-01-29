@@ -1,22 +1,26 @@
 ﻿using EpamTask06.ClassesOfUniversity.ExceptionsClasses;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    [Table]
     /// <summary>
     /// Class That describes Group table in database
     /// </summary>
     public class Group
     {
+        [Column(IsPrimaryKey = true,IsDbGenerated = true)]
         /// <summary>
         /// Int property for Id from DB
         /// </summary>
         public int Id { get; set; }
 
+        [Column]
         /// <summary>
         /// Number of Course
         /// </summary>
@@ -33,6 +37,7 @@ namespace EpamTask06.ClassesOfUniversity
             }
         }
 
+        [Column]
         /// <summary>
         /// Number of Group
         /// </summary>

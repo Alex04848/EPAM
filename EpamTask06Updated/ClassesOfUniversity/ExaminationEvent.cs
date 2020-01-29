@@ -1,17 +1,20 @@
 ﻿using EpamTask06.ClassesOfUniversity.ExceptionsClasses;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    [Table]
     /// <summary>
     /// Class That describes ExaminationEvent table in database
     /// </summary>
     public class ExaminationEvent
     {
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         /// <summary>
         /// Int property for Id from DB
         /// </summary>
@@ -37,6 +40,7 @@ namespace EpamTask06.ClassesOfUniversity
             set => group = value ?? throw new ExaminationEventException("Incorrect group!!!");
         }
 
+        [Column(Name = "DateOfExam")]
         /// <summary>
         /// Date of action
         /// </summary>
@@ -52,6 +56,7 @@ namespace EpamTask06.ClassesOfUniversity
             set => session = value ?? throw new ExaminationEventException("Incorrect value for session!!!");
         }
 
+        [Column(Name = "TypeOfEvent")]
         /// <summary>
         /// Type Of Event
         /// </summary>

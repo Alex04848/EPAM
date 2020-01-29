@@ -1,29 +1,27 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EpamTask06.ORMClasses;
+using EpamTask07.LINQtoSQL_ORM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask06.ClassesOfUniversity;
-using static EpamTask06.ORMClasses.SQLWorker;
+using EpamTask06;
+using static EpamTask07.LINQtoSQL_ORM.DBHelper;
 
-namespace EpamTask06.ORMClasses.Tests
+namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
-    /// <summary>
-    /// The Class which test CRUD of ORM class for Speciality
-    /// </summary>
     [TestClass()]
-    public class SQLRepositoryForSpecialityTests
+    public class SpecialityRepositoryTests
     {
-        IRepository<Speciality> repository = SQLRepositoryForSpeciality.Repository;
+        IRepository<Speciality> repository = SpecialityRepository.GetRepository;
 
 
         [TestMethod()]
         public void CreateDeleteTest()
         {
             //arrange
-            Speciality speciality = new Speciality("TS", "Test Speciality");
+            Speciality speciality = new Speciality("TS", "Test    Speciality");
             bool result;
 
             //act
@@ -65,7 +63,7 @@ namespace EpamTask06.ORMClasses.Tests
         public void UpdateTest()
         {
             //arrange
-            Speciality speciality = new Speciality("TS", "Test Speciality");
+            Speciality speciality = new Speciality("TS`2", "Test Speciality");
             bool result;
 
             //act
@@ -81,6 +79,5 @@ namespace EpamTask06.ORMClasses.Tests
             //assert
             Assert.IsTrue(result);
         }
-
     }
 }

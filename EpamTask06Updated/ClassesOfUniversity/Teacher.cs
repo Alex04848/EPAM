@@ -4,11 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Linq.Mapping;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    [Table(Name = "Teacher")]
     public class Teacher : Person
     {
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        /// <summary>
+        /// Int property for Id from DB
+        /// </summary>
+        public int Id { get; set; }
+
+
+        [Column]
         public override string FullName {
 
             get => fullName;
@@ -16,6 +26,8 @@ namespace EpamTask06.ClassesOfUniversity
             set => fullName = value ?? throw new TeacherException("Incorrect name of Teacher!!!");
 
         }
+
+        [Column]
         public override DateTime DateOfBirth {
 
             get => dateOfBirth;
@@ -29,6 +41,7 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        [Column]
         public override Gender Gender
         {
             get => gender;

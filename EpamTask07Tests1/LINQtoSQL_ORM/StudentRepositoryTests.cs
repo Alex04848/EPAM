@@ -1,34 +1,32 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EpamTask06.ORMClasses;
+using EpamTask07.LINQtoSQL_ORM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static EpamTask07.LINQtoSQL_ORM.DBHelper;
 using EpamTask06.ClassesOfUniversity;
-using static EpamTask06.ORMClasses.SQLWorker;
+using EpamTask06;
 
-namespace EpamTask06.ORMClasses.Tests
+namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
-    /// <summary>
-    /// The Class which test CRUD of ORM class for Student
-    /// </summary>
     [TestClass()]
-    public class SQLRepositoryForStudentTests
+    public class StudentRepositoryTests
     {
-        IRepository<Student> repository = SQLRepositoryForStudent.Repository;
+        IRepository<Student> repository = StudentRepository.GetRepository;
 
-        IRepository<Group> repositoryForGroup = SQLRepositoryForGroup.Repository;
+        IRepository<Group> repositoryForGroup = GroupRepository.GetRepository;
 
-        IRepository<Speciality> repositoryForSpeciality = SQLRepositoryForSpeciality.Repository;
+        IRepository<Speciality> repositoryForSpeciality = SpecialityRepository.GetRepository;
 
 
         [TestMethod()]
         public void CreateAndDeleteTest()
         {
             //arrange
-            Speciality speciality = new Speciality("TS", "Test Speciality");
-            Group group = new Group(1,1,speciality);
+            Speciality speciality = new Speciality("For Student", "Test Spec");
+            Group group = new Group(1, 1, speciality);
             Student student = new Student("Test Student", DateTime.Now, group, Gender.Male);
             bool result;
 
@@ -39,18 +37,18 @@ namespace EpamTask06.ORMClasses.Tests
 
             result = CheckExistance(student);
 
-
-            repository.Delete(GetID(student));         
+            repository.Delete(GetID(student));
             repositoryForGroup.Delete(GetID(group));
             repositoryForSpeciality.Delete(GetID(speciality));
 
             result = result && !CheckExistance(student);
 
+
             //assert
             Assert.IsTrue(result);
         }
 
-     
+
         [TestMethod()]
         public void GetCollectionTest()
         {
@@ -80,9 +78,9 @@ namespace EpamTask06.ORMClasses.Tests
         public void UpdateAndDeleteTest()
         {
             //arrange
-            Speciality speciality = new Speciality("TS", "Test Speciality");
+            Speciality speciality = new Speciality("TS_ForSt`1", "Test Speciality");
             Group group = new Group(1, 1, speciality);
-            Student student = new Student("Test Student", DateTime.Now, group, Gender.Male);
+            Student student = new Student("Test Student`1", DateTime.Now, group, Gender.Male);
             bool result;
 
             //act
@@ -107,6 +105,7 @@ namespace EpamTask06.ORMClasses.Tests
             //assert
             Assert.IsTrue(result);
         }
+
 
     }
 }

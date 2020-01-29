@@ -1,17 +1,27 @@
 ﻿using EpamTask06.ClassesOfUniversity.ExceptionsClasses;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    [Table]
     /// <summary>
     /// Class That describes Student table in database
     /// </summary>
     public class Student : Person
     {
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        /// <summary>
+        /// Int property for Id from DB
+        /// </summary>
+        public int Id { get; set; }
+
+
+        [Column]
         public override string FullName {
 
             get => fullName;
@@ -20,6 +30,7 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        [Column]
         public override DateTime DateOfBirth 
         {
 
@@ -46,6 +57,7 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        [Column]
         /// <summary>
         /// Gender
         /// </summary>

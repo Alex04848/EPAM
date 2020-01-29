@@ -1,23 +1,26 @@
 ﻿using EpamTask06.ClassesOfUniversity.ExceptionsClasses;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    [Table]
     /// <summary>
     /// Class That describes Speciality table in database
     /// </summary>
     public class Speciality
     {
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         /// <summary>
         /// Int property for Id from DB
         /// </summary>
         public int Id { get; set; }
 
-
+        [Column]
         /// <summary>
         /// Abreviation of Speciality
         /// </summary>
@@ -29,6 +32,7 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        [Column(Name = "FullNameOfSpeciality")]
         /// <summary>
         /// Name Of Speciality
         /// </summary>

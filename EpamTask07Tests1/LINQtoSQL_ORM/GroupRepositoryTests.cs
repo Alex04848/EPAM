@@ -1,31 +1,29 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EpamTask06.ORMClasses;
+using EpamTask07.LINQtoSQL_ORM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static EpamTask07.LINQtoSQL_ORM.DBHelper;
+using EpamTask06;
 using EpamTask06.ClassesOfUniversity;
-using static EpamTask06.ORMClasses.SQLWorker;
 
-namespace EpamTask06.ORMClasses.Tests
+namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
-    /// <summary>
-    /// The Class which test CRUD of ORM class for Group
-    /// </summary>
     [TestClass()]
-    public class SQLRepositoryForGroupTests
+    public class GroupRepositoryTests
     {
-        IRepository<Group> repository = SQLRepositoryForGroup.Repository;
+        IRepository<Group> repository = GroupRepository.GetRepository;
 
-        IRepository<Speciality> repositoryForSpeciality = SQLRepositoryForSpeciality.Repository;
+        IRepository<Speciality> repositoryForSpeciality = SpecialityRepository.GetRepository;
 
         [TestMethod()]
         public void CreateAndDeleteTest()
         {
             //arrange
             Speciality speciality = new Speciality("TS", "Test Speciality");
-            Group group = new Group(1,1,speciality);
+            Group group = new Group(1, 1, speciality);
             bool result;
 
             //act
@@ -43,6 +41,7 @@ namespace EpamTask06.ORMClasses.Tests
             //assert
             Assert.IsTrue(result);
         }
+
 
         [TestMethod()]
         public void GetCollectionTest()
@@ -70,7 +69,7 @@ namespace EpamTask06.ORMClasses.Tests
         public void UpdateAndDeleteTest()
         {
             //arrange
-            Speciality speciality = new Speciality("TS", "Test Speciality");
+            Speciality speciality = new Speciality("TS`1", "Test Speciality");
             Group group = new Group(1, 1, speciality);
             bool result;
 
@@ -86,11 +85,9 @@ namespace EpamTask06.ORMClasses.Tests
             repository.Delete(group.Id);
             repositoryForSpeciality.Delete(GetID(speciality));
 
-           
+
             //assert
             Assert.IsTrue(result);
         }
-
-
     }
 }

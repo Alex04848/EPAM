@@ -1,33 +1,34 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EpamTask06.ORMClasses;
+using EpamTask07.LINQtoSQL_ORM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EpamTask06;
 using EpamTask06.ClassesOfUniversity;
-using static EpamTask06.ORMClasses.SQLWorker;
+using static EpamTask07.LINQtoSQL_ORM.DBHelper;
 
-namespace EpamTask06.ORMClasses.Tests
+namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
     [TestClass()]
-    public class SQLRepositoryForTeacherTests
+    public class TeacherRepositoryTests
     {
-        IRepository<Teacher> repository = SQLRepositoryForTeacher.Repository;
+        IRepository<Teacher> repository = TeacherRepository.GetRepository;
+
 
         [TestMethod()]
         public void CreateAndDeleteTest()
         {
             //arrange
-            Teacher teacher = new Teacher("TestTeacher",DateTime.Now,Gender.Male);
+            Teacher teacher = new Teacher("TestTeacher", DateTime.Now, Gender.Male);
             bool result;
 
             //act
             repository.Create(teacher);
-            result = SQLWorker.CheckExistance(teacher);
-            repository.Delete(SQLWorker.GetID(teacher));
-            result = result && !SQLWorker.CheckExistance(teacher);
-
+            result = CheckExistance(teacher);
+            repository.Delete(GetID(teacher));
+            result = result && !CheckExistance(teacher); 
 
             //assert
             Assert.IsTrue(result);
@@ -37,21 +38,19 @@ namespace EpamTask06.ORMClasses.Tests
         public void GetCollectionTest()
         {
             //arrange
-            var teachers = repository.GetCollection().ToList();
+            List<Teacher> teachers = repository.GetCollection().ToList();
 
             //assert
-            Assert.IsTrue(teachers.All(teacher => CheckExistance(teacher)));
+            Assert.IsNotNull(teachers);
         }
 
         [DataTestMethod()]
         [DataRow(1)]
         [DataRow(2)]
-        [DataRow(3)]
         public void ReadTest(int idValue)
         {
             //arrange
             Teacher teacher = repository.Read(idValue);
-
 
             //assert
             Assert.IsNotNull(teacher);
@@ -66,14 +65,15 @@ namespace EpamTask06.ORMClasses.Tests
 
             //act
             repository.Create(teacher);
+            teacher.Id = GetID(teacher);
             result = CheckExistance(teacher);
 
-            teacher.Id = GetID(teacher);
             teacher.FullName += " Updated";
             repository.Update(teacher);
-          
+
             result = result && CheckExistance(teacher);
-            repository.Delete(GetID(teacher));
+
+            repository.Delete(teacher.Id);
 
 
             //assert

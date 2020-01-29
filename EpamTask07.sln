@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamTask06Updated", "EpamTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamTask06UpdatedTests", "EpamTask06UpdatedTests\EpamTask06UpdatedTests.csproj", "{CFA6209C-C039-484F-8165-38F4C6580065}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpamTask07Tests1", "EpamTask07Tests1\EpamTask07Tests1.csproj", "{9FED48FF-8653-4598-B836-B3DC854CCD2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CFA6209C-C039-484F-8165-38F4C6580065}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA6209C-C039-484F-8165-38F4C6580065}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA6209C-C039-484F-8165-38F4C6580065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FED48FF-8653-4598-B836-B3DC854CCD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FED48FF-8653-4598-B836-B3DC854CCD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FED48FF-8653-4598-B836-B3DC854CCD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FED48FF-8653-4598-B836-B3DC854CCD2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

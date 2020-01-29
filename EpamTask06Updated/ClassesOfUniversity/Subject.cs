@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,17 +8,20 @@ using EpamTask06.ClassesOfUniversity.ExceptionsClasses;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    [Table]
     /// <summary>
     /// Class That describes Subject table in database
     /// </summary>
     public class Subject
     {
+
+        [Column(IsPrimaryKey = true,IsDbGenerated = true)]
         /// <summary>
         /// Int property for Id from DB
         /// </summary>
         public int Id { get; set; }
 
-
+        [Column]
         /// <summary>
         /// Name Of Subject in DB
         /// </summary>
@@ -29,6 +33,7 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        [Column]
         /// <summary>
         /// Count of Lections Property
         /// </summary>
@@ -46,6 +51,7 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        [Column]
         /// <summary>
         /// Count of practice property
         /// </summary>
