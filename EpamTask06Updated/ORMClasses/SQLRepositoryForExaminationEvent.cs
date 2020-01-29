@@ -54,7 +54,8 @@ namespace EpamTask06.ORMClasses
                 $"{SQLWorker.GetID(obj.Group)}," +
                 $"'{obj.Date.ToString("yyyy-MM-dd")}'," +
                 $"{(int)obj.EventType}," +
-                $"{SQLWorker.GetID(obj.Session)})");
+                $"{SQLWorker.GetID(obj.Session)}," +
+                $"{SQLWorker.GetID(obj.Teacher)})");
         }
 
         public void Delete(int id)
@@ -104,7 +105,8 @@ namespace EpamTask06.ORMClasses
                 $"[GroupID] = {SQLWorker.GetID(obj.Group)}," +
                 $"[DateOfExam] = '{obj.Date.ToString("yyyy-MM-dd")}'," +
                 $"[TypeOfEvent] = {(int)obj.EventType}," +
-                $"[SessionID] = {SQLWorker.GetID(obj.Session)}" +
+                $"[SessionID] = {SQLWorker.GetID(obj.Session)}," +
+                $"[TeacherID] = {SQLWorker.GetID(obj.Teacher)}" +
                 $"WHERE [ID] = {obj.Id}");
         }
     }

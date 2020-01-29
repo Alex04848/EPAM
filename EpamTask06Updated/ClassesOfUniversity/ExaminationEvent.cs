@@ -40,19 +40,7 @@ namespace EpamTask06.ClassesOfUniversity
         /// <summary>
         /// Date of action
         /// </summary>
-        public DateTime Date {
-
-            get => dateTime;
-
-            set {
-
-                if (dateTime < session.StartDate || dateTime > session.EndDate)
-                    throw new ExaminationEventException("Incorrect date!!!");
-
-                dateTime = value;
-            }
-
-        }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// Session of Event
@@ -97,8 +85,6 @@ namespace EpamTask06.ClassesOfUniversity
 
         Session session;
 
-        DateTime dateTime;
-
         Teacher teacher;
 
 
@@ -110,9 +96,9 @@ namespace EpamTask06.ClassesOfUniversity
         {
             this.Subject = subject;
             this.Group = group;
-            this.Date = date;
-            this.EventType = eventType;
             this.Session = session;
+            this.Date = date;
+            this.EventType = eventType;         
             this.Teacher = teacher;
         }
 

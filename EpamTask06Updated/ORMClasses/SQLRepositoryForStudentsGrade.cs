@@ -57,7 +57,8 @@ namespace EpamTask06.ORMClasses
                 $" ({SQLWorker.GetID(obj.Student)}," +
                 $" {SQLWorker.GetID(obj.Subject)}," +
                 $"{obj.Grade}," +
-                $"{SQLWorker.GetID(obj.Session)})");
+                $"{SQLWorker.GetID(obj.Session)}," +
+                $"{SQLWorker.GetID(obj.Teacher)})");
         }
 
         public void Delete(int id)
@@ -106,7 +107,8 @@ namespace EpamTask06.ORMClasses
                 $"[StudentID] = {SQLWorker.GetID(obj.Student)}," +
                 $"[SubjectID] = {SQLWorker.GetID(obj.Subject)}," +
                 $"[Grade] = {obj.Grade}," +
-                $"[SessionID] = {SQLWorker.GetID(obj.Session)} " +
+                $"[SessionID] = {SQLWorker.GetID(obj.Session)}, " +
+                $"[TeacherID] = {SQLWorker.GetID(obj.Teacher)}" +
                 $" WHERE [ID] = {obj.Id}");
         }
        

@@ -39,7 +39,7 @@ namespace EpamTask06.ORMClasses
 
         public void Create(Teacher obj)
             => SQLWorker.SimpleQuery($"INSERT INTO [Teacher] VALUES (N'{obj.FullName}'," +
-                $"'{obj.DateOfBirth.ToString("yyyy-dd-MM")}',{(int)obj.Gender})");
+                $"'{obj.DateOfBirth.ToString("yyyy-MM-dd")}',{(int)obj.Gender})");
 
         public void Delete(int id)
             => SQLWorker.SimpleQuery($"DELETE [Teacher] WHERE [ID] = {id}");
@@ -71,8 +71,8 @@ namespace EpamTask06.ORMClasses
         }
 
         public void Update(Teacher obj)
-                => SQLWorker.SimpleQuery($"UPDATE [Teacher] SET [FullName] = $'{obj.FullName}'," +
-                    $"[DateOfBirth] = '{obj.DateOfBirth.ToString("yyyy-dd-MM")}'," +
+                => SQLWorker.SimpleQuery($"UPDATE [Teacher] SET [FullName] = N'{obj.FullName}'," +
+                    $"[DateOfBirth] = '{obj.DateOfBirth.ToString("yyyy-MM-dd")}'," +
                     $"[Gender] = {(int)obj.Gender} " +
                     $"WHERE [ID] = {obj.Id}");
     }

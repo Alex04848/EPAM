@@ -127,12 +127,14 @@ namespace EpamTask06.ORMClasses
             int idValueForStudent = GetID(studentsGrade.Student);
             int idValueForSubject = GetID(studentsGrade.Subject);
             int idValueForSession = GetID(studentsGrade.Session);
+            int idValueOfTeacher = GetID(studentsGrade.Teacher);
 
             return GetID($"SELECT [ID] FROM [StudentsGrade] WHERE " +
                 $"[StudentID] = {idValueForStudent} AND " +
                 $"[SubjectID] = {idValueForSubject} AND " +
                 $"[Grade] = {studentsGrade.Grade} AND " +
-                $"[SessionID] = {idValueForSession}");
+                $"[SessionID] = {idValueForSession} AND " +
+                $"[TeacherID] = {idValueOfTeacher}");
         }
 
         public static int GetID(ExaminationEvent examEvent)
@@ -140,14 +142,22 @@ namespace EpamTask06.ORMClasses
             int idValueForGroup = GetID(examEvent.Group);
             int idValueForSubject = GetID(examEvent.Subject);
             int idValueForSession = GetID(examEvent.Session);
+            int idValueOfTeacher = GetID(examEvent.Teacher);
 
             return GetID($"SELECT [ID] FROM [ExaminationEvent] WHERE " +
                 $"[SubjectID] = {idValueForSubject} AND " +
                 $"[GroupID] = {idValueForGroup} AND " +
                 $"[DateOfExam] = '{examEvent.Date.ToString("yyyy-MM-dd")}' AND " +
                 $"[TypeOfEvent] = {(int)examEvent.EventType} AND " +
-                $"[SessionID] = {idValueForSession}");
+                $"[SessionID] = {idValueForSession} AND " +
+                $"[TeacherID] = {idValueOfTeacher}");
         }
+
+        public static int GetID(Teacher teacher)
+            => GetID($"SELECT [ID] FROM [Teacher] WHERE " +
+                $"[FullName] = N'{teacher.FullName}' AND" +
+                $"[DateOfBirth] = '{teacher.DateOfBirth.ToString("yyyy-MM-dd")}' AND" +
+                $"[Gender] = {(int)teacher.Gender}");
 
 
 
@@ -172,6 +182,8 @@ namespace EpamTask06.ORMClasses
         public static bool CheckExistance(ExaminationEvent examinationEvent)
                 => (GetID(examinationEvent) != -1);
 
+        public static bool CheckExistance(Teacher teacher)
+            => (GetID(teacher) != -1);
     }
 }
 
