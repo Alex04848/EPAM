@@ -33,7 +33,9 @@ namespace EpamTask07.LINQtoSQL_ORM
 
         public void Create(Group obj)
             => db.ExecuteCommand($"INSERT INTO [Group] VALUES " +
-                $"({obj.NumOfCourse},{obj.NumOfGroup},{DBHelper.GetID(obj.SpecialityOfGroup)})");
+                $"({obj.NumOfCourse}," +
+                $"{obj.NumOfGroup}" +
+                $",{DBHelper.GetID(obj.SpecialityOfGroup)})");
 
         public void Delete(int id)
             => db.ExecuteCommand($"DELETE FROM [Group] WHERE [ID] = {id}");
@@ -41,7 +43,7 @@ namespace EpamTask07.LINQtoSQL_ORM
         public IEnumerable<Group> GetCollection()
         {
             List<Group> groups = new List<Group>();
-            var idValues = db.ExecuteQuery<int>("SELECT [ID] FROM [Group]").ToList();
+            List<int> idValues = db.ExecuteQuery<int>("SELECT [ID] FROM [Group]").ToList();
             
             idValues.ForEach(idValue => groups.Add(Read(idValue)));
 

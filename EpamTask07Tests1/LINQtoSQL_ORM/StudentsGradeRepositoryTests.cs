@@ -1,49 +1,47 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EpamTask06.ORMClasses;
+using EpamTask07.LINQtoSQL_ORM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EpamTask06.ClassesOfUniversity;
-using static EpamTask06.ORMClasses.SQLWorker;
+using EpamTask06;
+using static EpamTask07.LINQtoSQL_ORM.DBHelper;
 
-namespace EpamTask06.ORMClasses.Tests
+namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
-    /// <summary>
-    /// The Class which test CRUD of ORM class for StudentsGrade
-    /// </summary>
     [TestClass()]
-    public class SQLRepositoryForStudentsGradeTests
+    public class StudentsGradeRepositoryTests
     {
-        IRepository<StudentsGrade> repository = SQLRepositoryForStudentsGrade.Repository;
+        IRepository<StudentsGrade> repository = StudentsGradeRepository.GetRepository;
 
 
-        IRepository<Subject> repositoryForSubject = SQLRepositoryForSubject.Repository;
+        IRepository<Subject> repositoryForSubject = SubjectRepository.GetRepository;
 
-        IRepository<Session> repositoryForSession = SQLRepositoryForSession.Repository;
+        IRepository<Session> repositoryForSession = SessionRepository.GetRepository;
 
-        IRepository<Speciality> repositoryForSpeciality = SQLRepositoryForSpeciality.Repository;
+        IRepository<Speciality> repositoryForSpeciality = SpecialityRepository.GetRepository;
 
-        IRepository<Group> repositoryForGroup = SQLRepositoryForGroup.Repository;
+        IRepository<Group> repositoryForGroup = GroupRepository.GetRepository;
 
-        IRepository<Student> repositoryForStudent = SQLRepositoryForStudent.Repository;
+        IRepository<Student> repositoryForStudent = StudentRepository.GetRepository;
 
-        IRepository<Teacher> repositoryForTeacher = SQLRepositoryForTeacher.Repository;
+        IRepository<Teacher> repositoryForTeacher = TeacherRepository.GetRepository;
 
 
         [TestMethod()]
         public void CreateAndDeleteTest()
         {
             //arrange
-            Subject subject = new Subject("Test Subject",0,0);
-            Session session = new Session("Test Session",DateTime.MinValue,DateTime.MaxValue);
-            Speciality speciality = new Speciality("TS","Test Speciality");
-            Group group = new Group(1, 1,speciality);
-            Student student = new Student("Test Student",DateTime.Now,group,Gender.Male);
-            Teacher teacher = new Teacher("Test Teacher",DateTime.Now,Gender.Male);
+            Subject subject = new Subject("Test Subject`1", 0, 0);
+            Session session = new Session("Test Session20", DateTime.Now, DateTime.Now.AddDays(5));
+            Speciality speciality = new Speciality("TS`5", "Test Speciality`1");
+            Group group = new Group(1, 1, speciality);
+            Student student = new Student("Test Student`3", DateTime.Now, group, Gender.Male);
+            Teacher teacher = new Teacher("Test Teacher`3", DateTime.Now, Gender.Male);
 
-            StudentsGrade studentsGrade = new StudentsGrade(9,student,subject,session,teacher);
+            StudentsGrade studentsGrade = new StudentsGrade(9, student, subject, session, teacher);
             bool result;
 
             //act
@@ -74,7 +72,6 @@ namespace EpamTask06.ORMClasses.Tests
             Assert.IsTrue(result);
         }
 
-
         [TestMethod()]
         public void GetCollectionTest()
         {
@@ -103,12 +100,12 @@ namespace EpamTask06.ORMClasses.Tests
         public void UpdateAndDeleteTest()
         {
             //arrange
-            Subject subject = new Subject("Test Subject", 0, 0);
-            Session session = new Session("Test Session", DateTime.MinValue, DateTime.MaxValue);
-            Speciality speciality = new Speciality("TS", "Test Speciality");
+            Subject subject = new Subject("Test Subject`55", 0, 0);
+            Session session = new Session("Test Session`133", DateTime.Now, DateTime.Now.AddDays(5));
+            Speciality speciality = new Speciality("TS``1", "Test Speciality");
             Group group = new Group(1, 1, speciality);
-            Student student = new Student("Test Student", DateTime.Now, group, Gender.Male);
-            Teacher teacher = new Teacher("Test Teacher", DateTime.Now, Gender.Male);
+            Student student = new Student("Test Student``1", DateTime.Now, group, Gender.Male);
+            Teacher teacher = new Teacher("Test Teacher``1", DateTime.Now, Gender.Male);
 
             StudentsGrade studentsGrade = new StudentsGrade(9, student, subject, session, teacher);
             bool result;
@@ -147,7 +144,5 @@ namespace EpamTask06.ORMClasses.Tests
             //assert
             Assert.IsTrue(result);
         }
-
-
     }
 }

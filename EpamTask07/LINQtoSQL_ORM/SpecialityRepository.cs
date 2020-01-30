@@ -30,8 +30,9 @@ namespace EpamTask07.LINQtoSQL_ORM
 
 
         public void Create(Speciality obj)
-            => db.ExecuteCommand($"INSERT INTO [Speciality] VALUES (N'{obj.AbreviationOfSpeciality}',N'{obj.NameOfSpeciality}')");
-
+            => db.ExecuteCommand($"INSERT INTO [Speciality] VALUES " +
+                $"(N'{obj.AbreviationOfSpeciality}'," +
+                $"N'{obj.NameOfSpeciality}')");
 
         public void Delete(int id)
             => db.ExecuteCommand($"DELETE FROM [Speciality] WHERE [ID] = {id}");

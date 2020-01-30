@@ -11,7 +11,7 @@ namespace EpamTask06.DataAnalysisClasses
     /// <summary>
     /// The Class which gets and analize data of University Classes
     /// </summary>
-    public class DataAnalysis
+    public partial class DataAnalysis
     {
         /// <summary>
         /// Subjects
@@ -137,7 +137,6 @@ namespace EpamTask06.DataAnalysisClasses
         public IEnumerable<SessionResults> GetStudentsForExpelling(Session session,Group group,double minimalAverageGrade = 5.5)
             => GetResultsOfSession(session, group)
                         .Where(result => result.AverageGrade < minimalAverageGrade);
-
 
 
         /// <summary>

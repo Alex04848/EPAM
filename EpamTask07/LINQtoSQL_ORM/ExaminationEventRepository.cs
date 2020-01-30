@@ -39,7 +39,8 @@ namespace EpamTask07.LINQtoSQL_ORM
 
 
         public void Create(ExaminationEvent obj)
-            => db.ExecuteCommand($"INSERT [ExaminationEvent] VALUES ({GetID(obj.Subject)}" +
+            => db.ExecuteCommand($"INSERT [ExaminationEvent] VALUES " +
+                $"({GetID(obj.Subject)}" +
                 $",{GetID(obj.Group)}," +
                 $"'{obj.Date.ToString("yyyy-MM-dd")}'," +
                 $"{(int)obj.EventType}," +

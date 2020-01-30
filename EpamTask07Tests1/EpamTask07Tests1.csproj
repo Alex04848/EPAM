@@ -61,6 +61,7 @@
     <Compile Include="LINQtoSQL_ORM\SessionRepositoryTests.cs" />
     <Compile Include="LINQtoSQL_ORM\SpecialityRepositoryTests.cs" />
     <Compile Include="LINQtoSQL_ORM\StudentRepositoryTests.cs" />
+    <Compile Include="LINQtoSQL_ORM\StudentsGradeRepositoryTests.cs" />
     <Compile Include="LINQtoSQL_ORM\SubjectRepositoryTests.cs" />
     <Compile Include="LINQtoSQL_ORM\TeacherRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

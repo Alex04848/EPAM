@@ -29,11 +29,10 @@ namespace EpamTask07.LINQtoSQL_ORM
 
 
         public void Create(Subject obj)
-        {
-            db.GetTable<Subject>().InsertOnSubmit(obj);
-
-            db.SubmitChanges();
-        }
+            => db.ExecuteCommand($"INSERT INTO [Subject] VALUES " +
+                $"(N'{obj.NameOfSubject}'," +
+                $"{obj.CountOfLections}," +
+                $"{obj.CountOfPractice})");
 
         public void Delete(int id)
             => db.ExecuteCommand($"DELETE FROM [Subject] WHERE [ID] = {id}");
@@ -44,7 +43,6 @@ namespace EpamTask07.LINQtoSQL_ORM
         public Subject Read(int id)
             => db.ExecuteQuery<Subject>($"SELECT * FROM [Subject] WHERE [ID] = {id}")
             .FirstOrDefault();
-
 
         public void Update(Subject obj)
              => db.ExecuteCommand($"UPDATE [Subject] SET" +

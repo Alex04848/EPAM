@@ -32,6 +32,5 @@ namespace EpamTask06.DataAnalysisClasses.ExceptionClasses
                 throw new DataAnalysisException("Incorrect value of session!!!");
         }
 
-
     }
 }

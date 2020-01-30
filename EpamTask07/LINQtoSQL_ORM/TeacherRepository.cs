@@ -33,7 +33,9 @@ namespace EpamTask07.LINQtoSQL_ORM
 
         public void Create(Teacher obj)
             => db.ExecuteCommand($"INSERT INTO [Teacher] VALUES " +
-                $"(N'{obj.FullName}','{obj.DateOfBirth.ToString("yyyy-MM-dd")}',{(int)obj.Gender})");
+                $"(N'{obj.FullName}'," +
+                $"'{obj.DateOfBirth.ToString("yyyy-MM-dd")}'," +
+                $"{(int)obj.Gender})");
 
         public void Delete(int id)
                 => db.ExecuteCommand($"DELETE FROM [Teacher] WHERE [ID] = {id}");

@@ -29,18 +29,16 @@ namespace EpamTask07.LINQtoSQL_ORM
         }
 
         public void Create(Session obj)
-        {
-            db.GetTable<Session>().InsertOnSubmit(obj);
-
-            db.SubmitChanges();
-        }
+            => db.ExecuteCommand($"INSERT INTO [Session] VALUES " +
+                $"(N'{obj.NameOfSession}'," +
+                $"'{obj.StartDate.ToString("yyyy-MM-dd")}'," +
+                $"'{obj.EndDate.ToString("yyyy-MM-dd")}')");
 
         public void Delete(int id)
                 => db.ExecuteCommand($"DELETE FROM [Session] WHERE [ID] = {id}");
 
         public IEnumerable<Session> GetCollection()
                 => db.GetTable<Session>();
-
 
         public Session Read(int id)
             => db.ExecuteQuery<Session>($"SELECT * FROM [Session] WHERE [ID] = {id}")

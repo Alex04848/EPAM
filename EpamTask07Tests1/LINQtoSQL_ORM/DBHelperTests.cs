@@ -29,6 +29,8 @@ namespace EpamTask07.LINQtoSQL_ORM.Tests
 
         IRepository<Student> repositoryForStudent = StudentRepository.GetRepository;
 
+        IRepository<StudentsGrade> repositoryForStudentsGrade = StudentsGradeRepository.GetRepository;
+
 
         [DataTestMethod()]
         [DataRow(1)]
@@ -123,6 +125,21 @@ namespace EpamTask07.LINQtoSQL_ORM.Tests
 
             //assert
             Assert.IsTrue(student.Id == GetID(student));
+        }
+
+        [DataTestMethod()]
+        [DataRow(1)]
+        [DataRow(2)]
+        [DataRow(3)]
+        [DataRow(4)]
+        [DataRow(5)]
+        public void GetIDForStudentsGrade(int idValue)
+        {
+            //arrange
+            StudentsGrade studentsGrade = repositoryForStudentsGrade.Read(idValue);
+
+            //assert
+            Assert.IsTrue(studentsGrade.Id == GetID(studentsGrade));
         }
 
     }

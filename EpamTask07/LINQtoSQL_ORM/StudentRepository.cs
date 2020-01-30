@@ -32,17 +32,19 @@ namespace EpamTask07.LINQtoSQL_ORM
 
         public void Create(Student obj)
             => db.ExecuteCommand($"INSERT INTO [Student] VALUES" +
-                $" (N'{obj.FullName}','{obj.DateOfBirth.ToString("yyyy-MM-dd")}'," +
-                $"{DBHelper.GetID(obj.StudentGroup)},{(int)obj.Gender})");
+                $" (N'{obj.FullName}'," +
+                $"'{obj.DateOfBirth.ToString("yyyy-MM-dd")}'," +
+                $"{DBHelper.GetID(obj.StudentGroup)}," +
+                $"{(int)obj.Gender})");
 
         public void Delete(int id)
             => db.ExecuteCommand($"DELETE FROM [Student] WHERE [ID] = {id}");
 
         public IEnumerable<Student> GetCollection()
         {
-            List<int> idValues = db.ExecuteQuery<int>($"SELECT [ID] FROM [Student]").ToList();
             List<Student> students = new List<Student>();
-
+            List<int> idValues = db.ExecuteQuery<int>($"SELECT [ID] FROM [Student]").ToList();
+            
             idValues.ForEach(idValue => students.Add(Read(idValue)));
 
             return students;

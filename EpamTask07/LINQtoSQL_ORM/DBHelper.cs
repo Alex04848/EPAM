@@ -69,6 +69,14 @@ namespace EpamTask07.LINQtoSQL_ORM
                 $"[TeacherID] = {GetID(examEvent.Teacher)}")
             .FirstOrDefault();
 
+        public static int GetID(StudentsGrade studentsGrade)
+            => db.ExecuteQuery<int>($"SELECT [ID] FROM [StudentsGrade] WHERE" +
+                $"[StudentID] = {GetID(studentsGrade.Student)} AND " +
+                $"[SubjectID] = {GetID(studentsGrade.Subject)} AND " +
+                $"[Grade] = {studentsGrade.Grade} AND " +
+                $"[SessionID] = {GetID(studentsGrade.Session)} AND " +
+                $"[TeacherID] = {GetID(studentsGrade.Teacher)}")
+            .FirstOrDefault();
 
 
         public static bool CheckExistance(Teacher teacher)
@@ -92,5 +100,7 @@ namespace EpamTask07.LINQtoSQL_ORM
         public static bool CheckExistance(ExaminationEvent examEvent)
             => (GetID(examEvent) != 0);
 
+        public static bool CheckExistance(StudentsGrade studentsGrade)
+            => (GetID(studentsGrade) != 0);
     }
 }

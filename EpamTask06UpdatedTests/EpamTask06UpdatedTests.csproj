@@ -55,6 +55,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ClassesForExcel\ExcelWriterTests.cs" />
     <Compile Include="ORMClasses\SQLRepositoryForExaminationEventTests.cs" />
     <Compile Include="ORMClasses\SQLRepositoryForGroupTests.cs" />
     <Compile Include="ORMClasses\SQLRepositoryForSessionTests.cs" />
@@ -73,6 +74,9 @@
       <Project>{AED2E545-9B1C-4D72-8DDE-09EC1921AA66}</Project>
       <Name>EpamTask06Updated</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExcelFiles\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

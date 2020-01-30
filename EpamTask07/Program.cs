@@ -21,7 +21,6 @@ namespace EpamTask07
 
             int id = GetID(exam);
 
-            Console.WriteLine(id == exam.Id);
 
 
             Console.ReadKey();
