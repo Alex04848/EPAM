@@ -70,6 +70,7 @@
     <Compile Include="ClassesOfUniversity\StudentsGrade.cs" />
     <Compile Include="ClassesOfUniversity\Subject.cs" />
     <Compile Include="ClassesOfUniversity\Teacher.cs" />
+    <Compile Include="DataAnalysisClasses\AbstractDataSaver.cs" />
     <Compile Include="DataAnalysisClasses\DataAnalysis.cs" />
     <Compile Include="DataAnalysisClasses\ExceptionClasses\DataAnalisysException.cs" />
     <Compile Include="DBAccess\DBAccessObject.cs" />

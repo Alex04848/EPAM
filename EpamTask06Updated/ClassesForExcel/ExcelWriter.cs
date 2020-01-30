@@ -20,7 +20,7 @@ namespace EpamTask06.ClassesForExcel
         /// <summary>
         /// Default Path
         /// </summary>
-        public static readonly string defaultPath = GetParent(GetParent(GetCurrentDirectory()).FullName)
+        public static string DefaultPath { get; set; } = GetParent(GetParent(GetCurrentDirectory()).FullName)
                                                         .GetDirectories().First(dir => dir.Name.Equals("ExcelFiles")).FullName;
 
         /// <summary>
@@ -32,11 +32,12 @@ namespace EpamTask06.ClassesForExcel
                                                          Groups.GetCollection(),
                                                          Students.GetCollection(),
                                                          ExaminationEvents.GetCollection(),
-                                                         StudentsGrades.GetCollection());
+                                                         StudentsGrades.GetCollection(),
+                                                         Teachers.GetCollection());
 
         static ExcelWriter()
         {
-            Excel.ChangeDefaultPath(defaultPath);
+            Excel.ChangeDefaultPath(DefaultPath);
         }
 
         /// <summary>

@@ -27,6 +27,7 @@ namespace EpamTask06.DBAccess
 
         public static IRepository<ExaminationEvent> ExaminationEvents { get; private set; } = SQLRepositoryForExaminationEvent.Repository;
 
+        public static IRepository<Teacher> Teachers { get; private set; } = SQLRepositoryForTeacher.Repository;
 
     }
 }

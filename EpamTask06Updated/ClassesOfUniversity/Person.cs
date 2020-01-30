@@ -66,7 +66,7 @@ namespace EpamTask06.ClassesOfUniversity
         /// <param name="obj"></param>
         /// <returns></returns>
         public override bool Equals(object obj)
-                => (obj is Student student && student.GetHashCode() == this.GetHashCode());
+                => (obj is Person student && student.GetHashCode() == this.GetHashCode());
 
         /// <summary>
         /// Overrided ToString method
