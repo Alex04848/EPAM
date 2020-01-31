@@ -11,11 +11,19 @@ using EpamTask06.ClassesOfUniversity;
 
 namespace EpamTask07.ExcelWriterClasses
 {
+    /// <summary>
+    /// Class for writing results of Session in Excel Files
+    /// </summary>
     public static class ExcelWriter
     {
+        /// <summary>
+        /// Default Path To File
+        /// </summary>
         public static string PathToFile { get; set; } = GetParent(GetParent(GetCurrentDirectory()).FullName)
                                                         .GetDirectories().First(dir => dir.Name.Equals("ExcelFiles")).FullName;
-
+        /// <summary>
+        /// Data Analysis class with data from DB
+        /// </summary>
         public static DataAnalysis DataAnalysis { get; set; } = new DataAnalysis(Subjects.GetCollection(),
                                                          Sessions.GetCollection(),
                                                          Specialities.GetCollection(),
@@ -29,12 +37,25 @@ namespace EpamTask07.ExcelWriterClasses
             Excel.ChangeDefaultPath(PathToFile);
         }
 
+
+        /// <summary>
+        /// The method which writes session results of speciality to Excel File
+        /// </summary>
+        /// <param name="orderFlag"></param>
         public static void WriteResultsOfSessionForSpeciality(bool orderFlag = false)
             => DataAnalysis.Sessions.ToList().ForEach(session => WriteResultsOfSessionForSpeciality(session,orderFlag));
 
+        /// <summary>
+        /// The method which writes session results of teacher to Excel File
+        /// </summary>
+        /// <param name="orderFlag"></param>
         public static void WriteResultsOfSessionForTeacher(bool orderFlag = false)
             => DataAnalysis.Sessions.ToList().ForEach(session => WriteResultsOfSessionForTeacher(session, orderFlag));
 
+        /// <summary>
+        /// The method which writes year results of subject to Excel File
+        /// </summary>
+        /// <param name="orderFlag"></param>
         public static void WriteResultsForYears()
             => DataAnalysis.GetAllYears()
                                         .ToList()

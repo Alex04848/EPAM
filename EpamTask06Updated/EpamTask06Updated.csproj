@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassesForExcel\Excel.cs" />
-    <Compile Include="ClassesForExcel\ExcelWriter.cs" />
     <Compile Include="ClassesOfUniversity\EnumExaminationEventType.cs" />
     <Compile Include="ClassesOfUniversity\EnumGender.cs" />
     <Compile Include="ClassesOfUniversity\ExaminationEvent.cs" />

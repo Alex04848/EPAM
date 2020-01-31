@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask07Tests1.ExcelTests
 {
+    /// <summary>
+    /// The class which tests ExcelWriter Class
+    /// </summary>
     [TestClass()]
     public class ExcelTestClass
     {
@@ -40,7 +43,6 @@ namespace EpamTask07Tests1.ExcelTests
 
             Assert.IsTrue(pathes.All(path => File.Exists(path)));
         }
-
 
         [DataTestMethod()]
         [DataRow(new string[] { @"..\..\ExcelFiles\Предметы 2018 года Результаты.xlsx" })]

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask07.LINQtoSQL_ORM
 {
+    /// <summary>
+    /// Repository for Group Table
+    /// </summary>
     public class GroupRepository : IRepository<Group>
     {
         //--------------------Singleton-------------------

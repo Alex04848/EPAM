@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ClassesOfUniversity.ExceptionsClasses
 {
+    /// <summary>
+    /// Speciality Exception
+    /// </summary>
     public class SpecialityException : UniversityException
     {
         public SpecialityException()

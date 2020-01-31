@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask07.LINQtoSQL_ORM
 {
+    /// <summary>
+    /// Repository for Session Table
+    /// </summary>
     public class SessionRepository : IRepository<Session>
     {
         //--------------------Singleton-------------------

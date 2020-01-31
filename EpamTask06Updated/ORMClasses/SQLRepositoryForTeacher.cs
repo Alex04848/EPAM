@@ -9,6 +9,9 @@ using System.Data.SqlClient;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Repository for Teacher
+    /// </summary>
     public class SQLRepositoryForTeacher : IRepository<Teacher>
     {
         //-------------------Singleton-------------------------

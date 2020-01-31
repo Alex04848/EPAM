@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Db Exception for ORM Classes
+    /// </summary>
     public class DBException : Exception
     {
         public DBException() : base()

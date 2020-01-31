@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask07.LINQtoSQL_ORM
 {
+    /// <summary>
+    /// Repository for Subject Table
+    /// </summary>
     public class SubjectRepository : IRepository<Subject>
     {
         //--------------------Singleton-------------------

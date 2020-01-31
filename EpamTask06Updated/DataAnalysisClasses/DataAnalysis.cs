@@ -13,7 +13,6 @@ namespace EpamTask06.DataAnalysisClasses
     /// </summary>
     public partial class DataAnalysis : AbstractDataSaver
     {
-      
 
         public DataAnalysis(IEnumerable<Subject> subjects,
                             IEnumerable<Session> sessions,

@@ -10,6 +10,9 @@ using static EpamTask07.LINQtoSQL_ORM.DBHelper;
 
 namespace EpamTask07.LINQtoSQL_ORM
 {
+    /// <summary>
+    /// Repository for StudentsGrade Table
+    /// </summary>
     public class StudentsGradeRepository : IRepository<StudentsGrade>
     {
         //--------------------Singleton------------------------------

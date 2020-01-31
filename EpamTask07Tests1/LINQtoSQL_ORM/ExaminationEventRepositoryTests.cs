@@ -11,6 +11,9 @@ using static EpamTask07.LINQtoSQL_ORM.DBHelper;
 
 namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
+    /// <summary>
+    /// The Class which test CRUD of ORM class for Examination Events
+    /// </summary>
     [TestClass()]
     public class ExaminationEventRepositoryTests
     {

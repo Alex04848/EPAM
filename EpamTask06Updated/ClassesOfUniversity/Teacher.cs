@@ -8,6 +8,9 @@ using System.Data.Linq.Mapping;
 
 namespace EpamTask06.ClassesOfUniversity
 {
+    /// <summary>
+    /// Teacher class for University Classes
+    /// </summary>
     [Table(Name = "Teacher")]
     public class Teacher : Person
     {
@@ -17,7 +20,9 @@ namespace EpamTask06.ClassesOfUniversity
         /// </summary>
         public int Id { get; set; }
 
-
+        /// <summary>
+        /// FullName Of Teacher
+        /// </summary>
         [Column]
         public override string FullName {
 
@@ -27,6 +32,9 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        /// <summary>
+        /// Date Of Birth of Teacher
+        /// </summary>
         [Column]
         public override DateTime DateOfBirth {
 
@@ -41,6 +49,9 @@ namespace EpamTask06.ClassesOfUniversity
 
         }
 
+        /// <summary>
+        /// Gender
+        /// </summary>
         [Column]
         public override Gender Gender
         {

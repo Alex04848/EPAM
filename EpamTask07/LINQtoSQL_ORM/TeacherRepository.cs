@@ -10,6 +10,9 @@ using System.Data.Linq;
 
 namespace EpamTask07.LINQtoSQL_ORM
 {
+    /// <summary>
+    /// Repository for Teacher Table
+    /// </summary>
     public class TeacherRepository : IRepository<Teacher>
     {
         //-----------------Singleton----------------------

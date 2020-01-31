@@ -8,6 +8,9 @@ using System.Data.SqlClient;
 
 namespace EpamTask06.ORMClasses
 {
+    /// <summary>
+    /// Repository For Speciality
+    /// </summary>
     public class SQLRepositoryForSpeciality : IRepository<Speciality>
     {
         //--------------------------Singleton-----------------------

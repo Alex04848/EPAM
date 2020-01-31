@@ -10,6 +10,9 @@ using static EpamTask06.ORMClasses.SQLWorker;
 
 namespace EpamTask06.ORMClasses.Tests
 {
+    /// <summary>
+    /// The Class which test CRUD of ORM class for Teacher
+    /// </summary>
     [TestClass()]
     public class SQLRepositoryForTeacherTests
     {

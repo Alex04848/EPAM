@@ -15,13 +15,6 @@ namespace EpamTask07
     {
         static void Main(string[] args)
         {
-            IRepository<ExaminationEvent> repository = ExaminationEventRepository.GetRepository;
-
-            var exam = repository.Read(1);
-
-            int id = GetID(exam);
-
-
 
             Console.ReadKey();
         }

@@ -11,6 +11,9 @@ using EpamTask06;
 
 namespace EpamTask07.LINQtoSQL_ORM.Tests
 {
+    /// <summary>
+    /// The Class which test CRUD of ORM class for Student
+    /// </summary>
     [TestClass()]
     public class StudentRepositoryTests
     {

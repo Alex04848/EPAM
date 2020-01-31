@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace EpamTask06.DataAnalysisClasses
 {
+    /// <summary>
+    /// Common class for DataAnalysis Classes
+    /// </summary>
     public abstract class AbstractDataSaver
     {
         /// <summary>
